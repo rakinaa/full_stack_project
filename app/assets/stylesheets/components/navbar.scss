@@ -23,15 +23,11 @@
   align-items: center;
 }
 
-.nav-signup {
-  margin-left: 1.5rem;
-  background-color: #1B8FDC;
-  padding: 0.5rem;
-  border-radius: 2px;
-  color: white;
-  transition: background-color 1s;
+.nav-login {
+  @include darken-hover-text(white);
 }
 
-.nav-signup:hover {
-  background-color: #1F2C34;
+.nav-signup {
+  margin-left: 1.5rem;
+  @include darken-hover-button($soft-blue, white);
 }

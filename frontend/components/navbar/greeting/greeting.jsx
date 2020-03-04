@@ -10,7 +10,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
   );
   const personalGreeting = () => (
     <nav className="nav-auth">
-      <button className="logout-button" onClick={logout}>Log Out</button>
+      <button className="blue-button" onClick={logout}>Log Out</button>
     </nav>
   );
 

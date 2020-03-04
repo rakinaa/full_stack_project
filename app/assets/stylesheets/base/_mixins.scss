@@ -3,7 +3,7 @@
   transition: .2s;
 
   &:hover {
-    color: darken($color, 20%);
+    color: darken($color, 30%);
   }
 }
 
@@ -12,7 +12,7 @@
   transition: .2s;
 
   &:hover {
-    background-color: darken($bg-color, 20%);
-    color: darken($txt-color, 20%);
+    background-color: darken($bg-color, 10%);
+    color: darken($txt-color, 30%);
   }
 }

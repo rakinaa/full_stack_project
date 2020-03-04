@@ -2,9 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: black;
+  padding: 0.5rem;
+  background-color: $soft-black;
   font-family: sans-serif;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
 }
 
 .nav-logo {
@@ -12,22 +17,37 @@
   font-weight: 800;
 }
 
-.link-white {
-  color: white;
-}
-
 .nav-auth {
-  font-size: 1.1rem;
-  font-weight: 800;
   display: flex;
   align-items: center;
 }
 
-.nav-login {
-  @include darken-hover-text(white);
-}
-
 .nav-signup {
   margin-left: 1.5rem;
-  @include darken-hover-button($soft-blue, white);
+}
+
+.search-container {
+  position: relative;
+}
+
+.nav-searchbar {
+  margin-right: 1.5rem;
+  border-radius: 3px;
+  border: none;
+  padding: 0.5rem;
+  font-size: .9rem;
+  padding-left: 3rem;
+  background-color: $gray;
+  transition: all 0.3s;
+}
+
+.nav-searchbar:focus {
+  background-color: white;
+  padding-right: 30px;
+}
+
+.nav-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 9px;
 }

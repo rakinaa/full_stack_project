@@ -3,4 +3,10 @@
   padding: 0.5rem;
   border-radius: 2px;
   color: white;
+  @include darken-hover-button($soft-blue, white);
+}
+
+.link-white {
+  color: white;
+  @include darken-hover-text(white);
 }

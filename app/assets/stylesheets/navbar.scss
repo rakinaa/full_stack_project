@@ -1,0 +1,37 @@
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.link-white {
+  color: white;
+}
+
+.nav-auth {
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.nav-signup {
+  margin-left: 1.5rem;
+  background-color: #1B8FDC;
+  padding: 0.5rem;
+  border-radius: 2px;
+  color: white;
+  transition: background-color 1s;
+}
+
+.nav-signup:hover {
+  background-color: #1F2C34;
+}

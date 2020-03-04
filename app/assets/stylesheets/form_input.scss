@@ -1,0 +1,38 @@
+.input-container {
+  position: relative;
+}
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 40px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease all;
+}
+
+input:focus + .floating-label,
+input:not(:focus):valid + .floating-label{
+  top: 20%;
+  left: 30px;
+  font-size: 11px;
+  opacity: 1;
+  color: blue;
+}
+
+.form-input:focus,
+.form-input:not(:focus):valid {
+  border-color: blue;
+}
+
+.form-input {
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+}

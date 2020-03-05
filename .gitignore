@@ -32,4 +32,4 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 
-credentials.yml.enc
+/config/credentials.yml.enc

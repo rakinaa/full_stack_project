@@ -3,6 +3,7 @@
   padding: 0.5rem;
   border-radius: 2px;
   color: white;
+  border: none;
   @include darken-hover-button($soft-blue, white);
 }
 

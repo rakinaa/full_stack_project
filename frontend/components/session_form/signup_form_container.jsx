@@ -10,7 +10,8 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.session,
     formType: 'signup',
     heading: 'Sign up for Pictr',
-    message: 'Already a Pictr member?'
+    message: 'Already a Pictr member?',
+    btnText: 'Sign Up'
   };
 };
 

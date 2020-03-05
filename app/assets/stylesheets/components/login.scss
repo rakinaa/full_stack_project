@@ -1,6 +1,7 @@
 .login-form-container {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .login-form {
@@ -14,8 +15,14 @@
 }
 
 .login-form-box {
+  width: 320px;
   padding: 20px;
   background: white;
   position: relative;
   border-radius: 4px;
+}
+
+.form-submit {
+  width: 100%;
+  font-weight: 700;
 }

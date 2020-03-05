@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
 
   update(field) {
     return e => {
-      console.log(e.currentTarget.value)
       this.setState({
         [field]: e.currentTarget.value
       });
@@ -54,7 +53,7 @@ class SessionForm extends React.Component {
             <br />
             <FormInput label={"Password"} update={this.update('password')} type={'password'} />
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="blue-button form-submit" type="submit" value={this.props.btnText} />
           </div>
           <p>{message}</p>
           {otherForm}

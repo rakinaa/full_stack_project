@@ -9,7 +9,8 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.session,
     formType: 'login',
     heading: 'Log in to Pictr',
-    message: 'Not a Pictr member? '
+    message: 'Not a Pictr member? ',
+    btnText: 'Log In'
   };
 };
 

@@ -1,38 +1,41 @@
 .input-container {
   position: relative;
 }
+
 .floating-label {
   position: absolute;
   pointer-events: none;
-  left: 40px;
+  left: 45px;
   top: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s ease all;
+  color: gray;
 }
 
-input:focus + .floating-label,
-input:not(:focus):valid + .floating-label{
-  top: 20%;
-  left: 30px;
+.form-input:focus + .floating-label,
+.form-input:not(:focus):valid + .floating-label{
+  top: 30%;
+  left: 35px;
   font-size: 11px;
-  opacity: 1;
-  color: blue;
 }
 
-.form-input:focus,
-.form-input:not(:focus):valid {
-  border-color: blue;
+.form-input:focus + .floating-label {
+  color: $soft-blue;
 }
+
+.form-input:focus {
+  border-color: $soft-blue;
+}
+
 
 .form-input {
   font-size: 14px;
   width: 100%;
-  height: 50px;
   border: 1px solid black;
   border-radius: 3px;
   box-sizing: border-box;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 25px;
   padding-left: 10px;
-  padding-bottom: 0;
+  padding-bottom: 10px;
+  border-color: gray;
 }

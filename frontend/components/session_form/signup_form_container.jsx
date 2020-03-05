@@ -10,7 +10,7 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.session,
     formType: 'signup',
     heading: 'Sign up for Pictr',
-    message: 'Already a Pictr member?',
+    message: 'Already a Pictr member? ',
     btnText: 'Sign Up'
   };
 };
@@ -19,9 +19,9 @@ const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(signup(user)),
     otherForm: (
-      <a onClick={() => dispatch(openModal('login'))}>
+      <span className="redirect-link" onClick={() => dispatch(openModal('login'))}>
         Log in here
-      </a>
+      </span>
     ),
     closeModal: () => dispatch(closeModal())
   };

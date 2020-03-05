@@ -6,7 +6,7 @@
   position: absolute;
   pointer-events: none;
   left: 45px;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
   transition: 0.3s ease all;
   color: gray;
@@ -14,7 +14,7 @@
 
 .form-input:focus + .floating-label,
 .form-input:not(:focus):valid + .floating-label{
-  top: 30%;
+  top: 25%;
   left: 35px;
   font-size: 11px;
 }
@@ -38,4 +38,5 @@
   padding-left: 10px;
   padding-bottom: 10px;
   border-color: gray;
+  margin-bottom: 20px;
 }

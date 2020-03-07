@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {
-      session: { id: window.currentUser.id },
+      session: { currentUser: window.currentUser },
       entities: {
         users: { [window.currentUser.id]: window.currentUser }
       }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // testing
-  // window.store = store;
+  window.store = store;
   // window.signup = signup
   // window.login = login
   // window.logout = logout

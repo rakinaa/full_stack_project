@@ -1,9 +1,15 @@
 .nav-main {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: 0.5rem;
-  background-color: $soft-black;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  opacity: 90%;
+  height: $nav-height;
+  z-index: 2;
 }
 
 .nav-right {

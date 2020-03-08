@@ -1,0 +1,37 @@
+.index-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+
+  // grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  // grid-auto-flow: dense;
+  // grid-gap: 1px 1px;
+}
+
+.photo-container {
+  position: relative;
+  margin: 3px;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+  width: -moz-fit-content;
+  height: -moz-fit-content;
+}
+
+.index-photo {
+  height: 144px;
+  width: 144px;
+  object-fit: cover;
+}
+
+.bot-right {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+
+  & > * {
+    margin-right: 5px;
+    color: white;
+  }
+}

@@ -11,3 +11,22 @@
   color: white;
   @include darken-hover-text(white);
 }
+
+.spacer {
+  height: $nav-height;
+}
+
+.constrainer {
+  // width: 100%;
+  width: 1050px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1050px) {
+  .constrainer {
+    width: 100%;
+  }
+}

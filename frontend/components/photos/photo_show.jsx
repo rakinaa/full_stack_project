@@ -1,4 +1,5 @@
 import React from 'react'
+import PhotoDisplay from './photo_display';
 
 class PhotoShow extends React.Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class PhotoShow extends React.Component {
   render() {
     return (
       <div>
-        <img src={this.props.photo.image_url} alt={this.props.photo.title} />
+        <PhotoDisplay photo={this.props.photo} />
       </div>
     )
   }

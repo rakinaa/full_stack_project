@@ -6,10 +6,12 @@ import SearhBar from './searchbar';
 const NavBar = () => {
   return (
     <nav className="nav-main">
-      <Link className="nav-logo link-white" to="/">Pictr</Link>
-      <div className="nav-right">
-        <SearhBar />
-        <GreetingContainer />
+      <div className="constrainer">
+        <Link className="nav-logo link-white" to="/">Pictr</Link>
+        <div className="nav-right">
+          <SearhBar />
+          <GreetingContainer />
+        </div>
       </div>
     </nav>
   )

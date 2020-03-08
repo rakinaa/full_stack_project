@@ -12,6 +12,7 @@ const App = () => {
     <div>
       <ModalContainer />
       <NavBar />
+      {/* <div className="spacer"></div> */}
       <Switch>
         <Route exact path="/" component={Splash} />
         <Route exact path="/photos/new" component={CreatePhotoContainer} />

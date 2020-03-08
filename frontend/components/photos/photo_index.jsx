@@ -1,4 +1,5 @@
 import React from 'react'
+import PhotoIndexItem from './photo_index_item';
 
 class PhotoIndex extends React.Component {
   componentDidMount() {
@@ -7,11 +8,13 @@ class PhotoIndex extends React.Component {
   
   render() {
     return (
-      <ul>
-        {this.props.photos.map((photo) => {
-          return <li><img src={photo.photo_url} alt={photo.title}/></li>
-        })}
-      </ul>
+      <div className="constrainer">
+        <ul className="index-container">
+          {this.props.photos.map((photo) => {
+            return <PhotoIndexItem photo={photo} />
+          })}
+        </ul>
+      </div>
     )
   }
 }

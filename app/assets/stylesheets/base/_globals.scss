@@ -7,6 +7,15 @@
   @include darken-hover-button($soft-blue, white);
 }
 
+.white-button {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: black;
+  border: none;
+  @include lighten-hover-button(white, black);
+}
+
 .link-white {
   color: white;
   @include darken-hover-text(white);

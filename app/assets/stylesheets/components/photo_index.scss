@@ -2,33 +2,87 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 100px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: -5px;
 }
 
 .photo-container {
   flex-grow: 1;
   position: relative;
-  margin: 3px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: white;
+  transition: all .5s;
+  
+  &:hover .hud {
+    opacity: 100%;
+  }
+  
+  &:hover .info-container{
+  }
 }
+
+// .info-container {
+//   height: 100%;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+//   position: absolute;
+// }
 
 .index-photo-link {
   width: 100%;
 }
 
 .index-photo {
-  height: 200px;
+  height: 150px;
   min-width: 100%;
   object-fit: cover;
 }
 
+.hud {
+  opacity: 0%;
+  transition: ease all .5s;
+  filter: drop-shadow(0px 0px 3px #000000);
+  text-shadow: 0 0 50px black, 0 0 50px black;
+  // box-shadow: 
+  //       inset 0px 11px 20px -20px black,
+  //       inset 0px 11px 20px -20px black; 
+}
 
 .bot-right {
   position: absolute;
-  bottom: 2px;
-  right: 0;
+  bottom: 5px;
+  right: 5px;
 
   & > * {
     margin-right: 5px;
+  }
+}
+
+.ellipsis {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.photo-info {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  p {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  a {
+    font-size: 10px;
+    color: $gray;
+  }
+
+}
+
+@media (max-width: 1050px) {
+  .index-container {
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }

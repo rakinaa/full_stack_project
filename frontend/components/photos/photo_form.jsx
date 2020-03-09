@@ -6,7 +6,8 @@ class PhotoForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      image: null
+      image: null,
+      imageUrl: null
     }
   }
 
@@ -19,9 +20,16 @@ class PhotoForm extends React.Component {
   }
 
   handleFile(e) {
-    this.setState({
-      image: e.currentTarget.files[0]
-    })
+    const file = e.currentTarget.files[0];
+    const fileReader =  new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({
+        image: file,
+        photoUrl: fileReader.result
+      })
+    }
+    if (file) { fileReader.readAsDataURL(file); }
   }
 
   handleSubmit(e) {
@@ -32,15 +40,11 @@ class PhotoForm extends React.Component {
     formData.append('photo[description]', photo.description)
     formData.append('photo[user_id]', this.props.currentUser.id)
     formData.append('photo[image]', photo.image)
-    this.props.processForm(formData);
-    // $.ajax({
-    //   method: 'POST',
-    //   url: '/api/photos',
-    //   data: formData,
-    //   contentType: false,
-    //   processData: false
-    // })
+    this.props.processForm(formData).then(() => this.props.history.push("/photos"));
+  }
 
+  handleClick() {
+    document.getElementById('form-file').click();
   }
 
   renderErrors() {
@@ -56,17 +60,20 @@ class PhotoForm extends React.Component {
   }
 
   render() {
+    const preview = this.state.photoUrl ? <img className='preview-img' src={this.state.photoUrl} /> : null;
     return (
       <div>
         <form onSubmit={this.handleSubmit.bind(this)} className="photo-form-box">
           <h3>Create a new photo</h3>
           {/* {this.renderErrors()} */}
-          <div>
-            <input type="text" onChange={this.update('title')} />
-            <input type="text" onChange={this.update('description')} />
-            <input type="file" onChange={this.handleFile.bind(this)} />
-            <input className="blue-button" type="submit" value={this.props.btnText} />
+          <div className="upload-display">
+            {preview}
+            <input type="button" className="blue-button upload-btn" value={this.props.btnText} onClick={this.handleClick.bind(this)} />
           </div>
+          <input type="file" id="form-file" onChange={this.handleFile.bind(this)} />
+          <input type="text" placeholder="Title" className="form-title" onChange={this.update('title')} />
+          <input type="text" placeholder="Description" className="form-description" onChange={this.update('description')} /> */}
+          <input className="blue-button" type="submit" value="Post" />
         </form>
       </div>
     )

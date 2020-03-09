@@ -16,3 +16,13 @@
     color: darken($txt-color, 30%);
   }
 }
+
+@mixin lighten-hover-button($bg-color, $txt-color) {
+  transition-property: background-color, color;
+  transition: .4s;
+
+  &:hover {
+    background-color: lighten($bg-color, 10%);
+    color: lighten($txt-color, 40%);
+  }
+}

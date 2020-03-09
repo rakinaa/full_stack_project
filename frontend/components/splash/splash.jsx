@@ -1,10 +1,11 @@
 import React from 'react'
+import CarouselContainer from './carousel_container';
 
 class Splash extends React.Component {
   render() {
     return (
-      <div>
-        
+      <div className='splash-container'>
+        <CarouselContainer />
       </div>
     )
   }

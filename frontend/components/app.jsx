@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Splash from "./splash";
+import Splash from "./splash/splash";
 import ModalContainer from "./modal/modal";
 import NavBar from "./navbar/navbar";
 import CreatePhotoContainer from "./photos/create_photo_container";

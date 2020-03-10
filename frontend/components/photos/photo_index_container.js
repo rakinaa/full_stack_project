@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { getPhotos } from '../../actions/photo_actions';
 import PhotoIndex from './photo_index';
 
-const mapStateToProps = ({ entities }) => {
+const mapStateToProps = ({ entities, session }) => {
   return {
     photos: Object.values(entities.photos)
   };

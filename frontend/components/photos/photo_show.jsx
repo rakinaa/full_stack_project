@@ -1,5 +1,6 @@
 import React from 'react'
 import PhotoDisplay from './photo_display';
+import PhotoInfo from './photo_info';
 
 class PhotoShow extends React.Component {
   componentDidMount() {
@@ -13,9 +14,18 @@ class PhotoShow extends React.Component {
   }
   
   render() {
+    const { users, photo } = this.props;
+    if (!this.props.users || !this.props.photo) return null;
+    console.log(this.props)
     return (
       <div>
-        <PhotoDisplay photo={this.props.photo} />
+        <PhotoDisplay photo={photo} />
+        <PhotoInfo 
+          title={photo.title} 
+          description={photo.description} 
+          userpic={"http://via.placeholder.com/640x360"}
+          user={users[photo.user_id]}
+        />
       </div>
     )
   }

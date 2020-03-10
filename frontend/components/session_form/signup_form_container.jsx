@@ -7,6 +7,11 @@ import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
   return {
+    initialState: {
+      username: '',
+      email: '',
+      password: ''
+    },
     errors: errors.session,
     formType: 'signup',
     heading: 'Sign up for Pictr',
@@ -23,6 +28,7 @@ const mapDispatchToProps = dispatch => {
         Log in here
       </span>
     ),
+    hasEmail: true,
     closeModal: () => dispatch(closeModal())
   };
 };

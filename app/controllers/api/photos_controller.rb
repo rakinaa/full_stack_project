@@ -1,13 +1,13 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.all
-    render :index
+    @photos = Photo.all.includes(:user)
+    render "api/photos/index"
   end
 
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      render :show
+      render "api/photos/show"
     else
       render json: @photo.errors.full_messages
     end
@@ -15,7 +15,7 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
-    render :show
+    render "api/photos/show"
   end
 
   private

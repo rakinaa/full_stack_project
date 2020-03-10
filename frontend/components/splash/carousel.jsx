@@ -9,7 +9,6 @@ class Carousel extends React.Component {
       function showSlides() {
         let i;
         let slides = document.getElementsByClassName("slide");
-        console.log(slides);
         if (slides.length > 0) {
           for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
@@ -32,13 +31,13 @@ class Carousel extends React.Component {
     return (
       <div className="carousel-container">
         {this.props.photos.map((photo) => (
-          <div className="slide fade">
+          <div key={photo.id} className="slide fade">
             <img className="slide-img" src={photo.image_url} />
             <div className="slide-info">
               <p className="slide-title">{photo.title}</p>
               <p>by {'a guy'}</p>
             </div>
-           </div>
+          </div>
         ))}
 
           {/* <div className="slide fade">

@@ -1,21 +1,25 @@
 .input-container {
   position: relative;
+  margin-bottom: 20px;
 }
 
-.floating-label {
+[class^=floating-label] {
   position: absolute;
   pointer-events: none;
-  left: 45px;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  left: 10px;
+  top: 20px;
   transition: 0.3s ease all;
   color: gray;
 }
 
-.form-input:focus + .floating-label,
-.form-input:not(:focus):valid + .floating-label{
-  top: 25%;
-  left: 35px;
+.floating-label-error {
+  color: red;
+}
+
+[class^=form-input]:focus + [class^=floating-label],
+[class^=form-input]:not(:focus):valid + [class^=floating-label]{
+  top: 11px;
+  left: 12px;
   font-size: 11px;
 }
 
@@ -28,7 +32,7 @@
 }
 
 
-.form-input {
+[class^=form-input] {
   font-size: 14px;
   width: 100%;
   border: 1px solid black;
@@ -38,5 +42,17 @@
   padding-left: 10px;
   padding-bottom: 10px;
   border-color: gray;
-  margin-bottom: 20px;
+}
+
+.form-input-error {
+  border-color: red;
+}
+
+.form-error {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 12px;
+  background-color: lighten(red, 30%);
+  border: 2px solid red;
+  color: red;
 }

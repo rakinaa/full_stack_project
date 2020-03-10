@@ -1,2 +1,7 @@
-json.extract! @photo, :id, :title, :description, :user_id
-json.image_url url_for(@photo.image)
+json.photo do
+  json.partial! "api/photos/photo", photo: @photo
+end 
+
+json.user do 
+  json.extract! @photo.user, :id, :username
+end

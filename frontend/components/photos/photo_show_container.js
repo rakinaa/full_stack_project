@@ -4,7 +4,8 @@ import PhotoShow from './photo_show';
 
 const mapStateToProps = ({ entities }, ownProps) => {
   return {
-    photo: entities.photos[ownProps.match.params.photoId] || ''
+    photo: entities.photos[ownProps.match.params.photoId] || '',
+    users: entities.users || ''
   };
 };
 

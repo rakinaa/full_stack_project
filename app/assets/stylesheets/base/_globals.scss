@@ -34,8 +34,15 @@
   align-items: center;
 }
 
+.profile-pic {
+  border-radius: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 1050px) {
   .constrainer {
     width: 100%;
+    // margin-right: 10px;
+    // margin-left: 10px;
   }
 }

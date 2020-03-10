@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 5px;
 }
 
 .login-input {
@@ -42,4 +43,8 @@
     font-size: 0.8rem;
     margin-top: 10px;
   }
+}
+
+.demo {
+  margin-top: 15px;
 }

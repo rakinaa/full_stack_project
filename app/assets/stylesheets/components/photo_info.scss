@@ -1,0 +1,46 @@
+.photo-info-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.pshow-pic {
+  height: 60px;
+  width: 60px;
+}
+
+.img-container {
+  margin-right: 20px;
+}
+
+.photo-info-right {
+  margin-right: 100px;
+}
+
+.poster-name {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 600;
+  transition: all .5s;
+
+  &:hover {
+    text-decoration: underline;
+    color: $soft-blue;
+  }
+}
+
+.photo-title {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1050px) {
+  .photo-info-container {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+

@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGift } from "@fortawesome/free-solid-svg-icons";
 import PhotoIndexItem from '../photos/photo_index_item'
 
 class UserShow extends React.Component {
@@ -24,7 +26,16 @@ class UserShow extends React.Component {
                 <div className="img-container">
                   <img className="profile-pic ushow-pic" src="http://via.placeholder.com/640x360" alt="profile-pic"/>
                 </div>
-                <p>{this.props.user.username}</p>
+                <div className="ushow-data-left">
+                  <p className="ushow-username">{this.props.user.username}</p>
+                  <div className="sub-data">
+                    <FontAwesomeIcon className='gift-icon' icon={faGift} />
+                    <p>{'Give Pro'}</p>
+                    <p>{'username'}</p>
+                    <p>{'100 followers'}</p>
+                    <p>{'100 following'}</p>
+                  </div>
+                </div>
               </div>
               <div className="user-right">
                 <p>follows 0</p>

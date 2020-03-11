@@ -20,19 +20,43 @@
 .user-content {
   height: 100%;
   width: 100%;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
 .ushow-pic {
-  width: 400px;
-  height: 400px;
+  width: 100px;
+  height: 100px;
   border: 1px solid black;
+}
+
+.ushow-data-left {
+  margin-top: 20px;
+}
+
+.ushow-username {
+  font-size: 35px;
 }
 
 .user-left {
   display: flex;
+}
+
+.sub-data {
+  display: flex;
+  margin-top: 20px;
+
+  & > p {
+    margin-right: 30px;
+  }
+}
+
+.gift-icon {
+  font-size: 20px;
+  margin-top: -4px;
+  margin-right: 5px;
 }
 
 @media (max-width: 1050px) {

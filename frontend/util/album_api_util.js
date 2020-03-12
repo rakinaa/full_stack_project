@@ -1,5 +1,4 @@
 export const createAlbum = (album, inclusions) => {
-  console.log(inclusions)
   return $.ajax({
     method: 'POST',
     url: '/api/photo_albums',

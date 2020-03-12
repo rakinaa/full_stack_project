@@ -19,7 +19,6 @@ class PhotoForm extends React.Component {
 
   handleFiles(e) {
     const files = Array.from(e.currentTarget.files);
-    console.log(files);
 
     files.forEach((file, idx) => {
       const fileReader = new FileReader();
@@ -78,7 +77,6 @@ class PhotoForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     const buttons = Object.values(this.state).length > 0 ?
       <input onClick={this.handleSubmit.bind(this)} className="blue-button post-button" type="submit" value="Post" /> :
       (

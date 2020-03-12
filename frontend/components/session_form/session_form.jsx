@@ -80,7 +80,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { errors, heading, formType, message, closeModal, otherForm } = this.props;
     const loginErr = this.getErrors("username/password");
     return (

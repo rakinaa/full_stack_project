@@ -1,5 +1,5 @@
 import React from 'react';
-import { createComment } from '../../../../frontend/util/comment_api_util';
+import { createComment } from '../../util/comment_api_util';
 
 class CommentForm extends React.Component {
   constructor(props) {

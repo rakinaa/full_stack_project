@@ -17,7 +17,6 @@ const photosReducer = (state={}, action) => {
     case RECEIVE_USER:
       return action.payload.photos;
     case RECEIVE_ALBUM:
-      console.log(action.payload)
       return action.payload.photos;
     default:
       return state;

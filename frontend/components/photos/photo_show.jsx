@@ -16,7 +16,6 @@ class PhotoShow extends React.Component {
   render() {
     const { users, photo, comments } = this.props;
     if (!this.props.users || !this.props.photo) return null;
-    console.log(this.props)
     return (
       <div>
         <PhotoDisplay photo={photo} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import PhotoCommentItem from './photo_comment_item';
-import CommentForm from '../../../app/assets/stylesheets/components/comment_form';
+import CommentForm from './comment_form';
 
 const PhotoComments = (props) => {
   return (

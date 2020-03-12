@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_PHOTOS, RECEIVE_PHOTO } from '../actions/photo_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_ALBUM } from '../actions/album_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,6 +16,9 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_PHOTO:
       newState[action.payload.user.id] = action.payload.user;
       return Object.assign(newState, action.payload.commenters)
+    case RECEIVE_ALBUM:
+      newState[action.payload.user.id] = action.payload.user;
+      return newState;
     case RECEIVE_PHOTOS:
       // may need to reverse newState and action.payload.users later
       return Object.assign(newState, action.payload.users)

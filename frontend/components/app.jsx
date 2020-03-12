@@ -7,6 +7,8 @@ import CreatePhotoContainer from "./photos/create_photo_container";
 import PhotoIndexContainer from "./photos/photo_index_container";
 import PhotoShowContainer from "./photos/photo_show_container";
 import UserShowContainer from "./users/user_show_container";
+import AlbumShowContainer from "./albums/album_show_container";
+import AlbumFormContainer from "./albums/album_form_container";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route exact path="/photos" component={PhotoIndexContainer} />
         <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
         <Route exact path="/users/:userId" component={UserShowContainer} />
+        <Route exact path="/albums/new" component={AlbumFormContainer} />
+        <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
       </Switch>
     </div>
   )

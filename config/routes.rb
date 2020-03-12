@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :index, :show]
     resources :comments, only: [:create, :update, :destroy]
     resources :photo_albums, only: [:create, :update, :destroy, :show]
+    resources :album_inclusions, only: [:create]
   end
   root "static_pages#root"
 end

@@ -29,9 +29,9 @@ class SessionForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    const logins = ['guestuser1', 'guestuser2', 'guestuser3', 'guestuser4']
+    const logins = ['guestuser1', 'guestuser2', 'guestuser3', 'guestuser4', 'guestuser5']
     const randUser = sample(logins)
-    const pass = '123456789';
+    const pass = '1234567890';
 
     let c = 0;
     let p = 0

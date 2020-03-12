@@ -11,13 +11,11 @@
   margin-right: 5px;
   margin-bottom: 5px;
   color: white;
-  transition: all .5s;
+  transition: opacity .5s;
+  box-sizing: border-box;
   
   &:hover .hud {
     opacity: 100%;
-  }
-  
-  &:hover .info-container{
   }
 }
 

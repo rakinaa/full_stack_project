@@ -33,7 +33,7 @@ const receiveErrors = (errors) => {
 
 export const createPhoto = (photo) => (dispatch) => {
   return APIUtil.createPhoto(photo).then(
-    (payload) => dispatch(receivePhoto(payload)),
+    (payload) => dispatch(receivePhotos(payload)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   )
 }

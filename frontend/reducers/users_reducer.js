@@ -14,7 +14,7 @@ const usersReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_PHOTO:
       newState[action.payload.user.id] = action.payload.user;
-      return newState;
+      return Object.assign(newState, action.payload.commenters)
     case RECEIVE_PHOTOS:
       // may need to reverse newState and action.payload.users later
       return Object.assign(newState, action.payload.users)

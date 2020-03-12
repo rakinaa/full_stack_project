@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PhotoComments from './photo_comments';
 
 const PhotoInfo = (props) => {
-  console.log(props);
   return (
     <div className='constrainer photo-info-container'>
       <div className='img-container'>
@@ -12,6 +12,13 @@ const PhotoInfo = (props) => {
         <Link className="poster-name" to={`/users/${props.user.id}`}>{props.user.username}</Link>
         <p className="photo-title">{props.title}</p>
         <p className="photo-desc">{props.description}</p>
+        <PhotoComments 
+          comments={props.comments} 
+          users={props.users} 
+          userpic={props.userpic} 
+          currUser={props.user}
+          photoId={props.photoId}
+        />
       </div>
     </div>
   )

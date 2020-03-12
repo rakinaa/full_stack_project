@@ -5,12 +5,21 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    if @photo.save
-      render "api/photos/show"
-    else
-      render json: @photo.errors.full_messages
+    @photos = []
+    params[:photos].each do |photo|
+      @photo = Photo.new(photo.permit(:title, :description, :image, :user_id))
+      @photo.save
+      @photos.push(@photo)
+      #   # render "api/photos/show"
+      # else
+      #   # render json: @photo.errors.full_messages
+      # end
     end
+    
+    render :index
+    # p params[:photos].to_a
+    # Photo.create(params[:photos].to_a)
+    # render "api/photos/show"
   end
 
   def show
@@ -21,6 +30,11 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :image, :user_id)
+    # params.roquire(:photo).permit(:title, :description, :image, :user_id)
+    # params.require(:photos) do |photo|
+    #   photo.permit(:title, :description, :image, :user_id)
+    # end
+    # {photos: [{title..}, {title...}]}
+    # {title: .., photos: [img.png, img.png] }
   end
 end

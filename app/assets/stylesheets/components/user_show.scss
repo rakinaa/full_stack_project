@@ -44,6 +44,7 @@
   display: flex;
 }
 
+
 .sub-data {
   display: flex;
   margin-top: 20px;
@@ -51,6 +52,10 @@
   & > p {
     margin-right: 30px;
   }
+}
+
+#last {
+  margin-right: 18vw;
 }
 
 .gift-icon {

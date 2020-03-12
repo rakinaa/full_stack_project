@@ -32,13 +32,12 @@ class UserShow extends React.Component {
                     <FontAwesomeIcon className='gift-icon' icon={faGift} />
                     <p>{'Give Pro'}</p>
                     <p>{'username'}</p>
-                    <p>{'100 followers'}</p>
-                    <p>{'100 following'}</p>
+                    <p>{'100 Followers'}</p>
+                    <p id='last'>{'100 Following'}</p>
+                    <p>{'1000 Photos'}</p>
+                    <p>{'Joined 1999'}</p>
                   </div>
                 </div>
-              </div>
-              <div className="user-right">
-                <p>follows 0</p>
               </div>
             </div>
           </div>

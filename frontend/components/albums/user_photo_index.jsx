@@ -7,7 +7,6 @@ class UserPhotoIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props.users)
     return (
       <div>
         <div className="user-photo-index">

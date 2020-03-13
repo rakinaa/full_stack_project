@@ -1,4 +1,4 @@
-![Logo](./app/assets/images/tableup_logo.png)
+![Logo]()
 
 # Pictr
 [Pictr link](https://pictrapp.herokuapp.com/#/)
@@ -22,8 +22,6 @@ Users can create albums of photos that they own. They are able to interface with
 ### Comments
 
 Users are allowed to comment on photos, the comment they make will appear on that photo's show page, it features a link to their profile along with their profile picture, and comment body.
-
-![Calendar](./app/assets/images/reserve_calendar.png)
 
 ### W
 To view the schema documentation, frontend state layout, and general planning

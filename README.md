@@ -3,9 +3,8 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Flickr.svg/256px-Flickr.svg.png" align="top"
      title="Size Limit logo by Anton Lovchikov" width="120">
 
-Size Limit is a performance budget tool for JavaScript. It checks every commit
-on CI, calculates the real cost of your JS for end-users and throws an error
-if the cost exceeds the limit.
+Pictr is an photo sharing app made in the image of Flickr. It allows you to 
+upload images, comment on photos, create albums, and view the photos of others.
 
 * **ES modules** and **tree-shaking** support.
 * Add Size Limit to **Travis CI**, **Circle CI**, or another CI system

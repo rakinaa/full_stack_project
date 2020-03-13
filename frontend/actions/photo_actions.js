@@ -4,10 +4,18 @@ export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
+export const RECEIVE_NEW_PHOTOS = 'RECEIVE_NEW_PHOTOS';
+
 
 const receivePhoto = (payload) => {
   return {
     type: RECEIVE_PHOTO,
+    payload
+  }
+}
+const receiveNewPhotos = (payload) => {
+  return {
+    type: RECEIVE_NEW_PHOTOS,
     payload
   }
 }
@@ -33,7 +41,7 @@ const receiveErrors = (errors) => {
 
 export const createPhoto = (photo) => (dispatch) => {
   return APIUtil.createPhoto(photo).then(
-    (payload) => dispatch(receivePhotos(payload)),
+    (payload) => dispatch(receiveNewPhotos(payload)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   )
 }

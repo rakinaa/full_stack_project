@@ -8,7 +8,7 @@ const mapStateToProps = ({ errors, session }) => {
     errors: errors.session,
     formType: 'create',
     heading: 'Create Photo',
-    btnText: 'Choose a photo to upload'
+    btnText: 'Choose photos to upload'
   };
 };
 

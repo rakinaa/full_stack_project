@@ -13,7 +13,7 @@ end
 json.users do
   @photos.each do |photo|
     json.set! photo.user_id do
-      json.extract! photo.user, :id, :username
+      json.partial! 'api/users/user.json.jbuilder', user: photo.user
     end
   end
 end

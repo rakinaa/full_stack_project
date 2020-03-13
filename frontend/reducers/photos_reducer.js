@@ -1,4 +1,4 @@
-import { RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_PHOTOS } from "../actions/photo_actions";
+import { RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_PHOTOS, RECEIVE_NEW_PHOTOS } from "../actions/photo_actions";
 import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_ALBUM } from "../actions/album_actions";
 
@@ -11,6 +11,8 @@ const photosReducer = (state={}, action) => {
       return newState;
     case RECEIVE_PHOTOS:
       return action.payload.photos;
+    case RECEIVE_NEW_PHOTOS:
+      return Object.assign(newState, action.payload.photos)
     case REMOVE_PHOTO:
       delete newState[action.photoId];
       return newState;

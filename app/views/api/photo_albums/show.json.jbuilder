@@ -4,7 +4,7 @@ json.album do
 end
 
 json.user do
-  json.partial! "api/users/user", user: @album.user
+  json.partial! "api/users/user.json.jbuilder", user: @album.user
 end
 
 json.set! :photos, {}

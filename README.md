@@ -23,7 +23,7 @@ Users are allowed to comment on photos, the comment they make will appear on tha
 To view the schema documentation, frontend state layout, and general planning
 go to the [wiki](https://github.com/rakinaa/full_stack_project/wiki).
 
-### Future planned features
+### Features to implement in the future
 + Tags to label pictures with relevant information not present in the title
 + Seach functionality to allow users to search for key words and filter photos on the index page
 + Favoriting photos, allowing the user create a list of photos that they like

@@ -1,7 +1,7 @@
-# Pictr [[cult-img]][cult]
+# Pictr
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Flickr.svg/256px-Flickr.svg.png" align="top"
-     title="Size Limit logo by Anton Lovchikov" width="120" height="178">
+     title="Size Limit logo by Anton Lovchikov" width="120">
 
 Size Limit is a performance budget tool for JavaScript. It checks every commit
 on CI, calculates the real cost of your JS for end-users and throws an error

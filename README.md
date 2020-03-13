@@ -1,52 +1,36 @@
 ![Logo](./app/assets/images/tableup_logo.png)
 
-# TableUp
-[Tableup Heroku Link](https://tableupfs.herokuapp.com/#/)
+# Pictr
+[Pictr link](https://pictrapp.herokuapp.com/#/)
 
-TableUp is a full-stack web app that helps you search for and make reservations at the all best restaurants. This app is inspired by OpenTable and is built with a Rails backend running PostgreSQL for the database. The front end is built out in the React.js/Redux framework.
+Pictr is a full-stack web app that allows you to share photos with others. This app is made in the image of Flickr. It is built with Rails and PostreSQL backend, with AWS s3 storing the image files. The Frontend is built with React, Redux, and SASS
 
 ![home](./app/assets/images/home.png)
 
 ## Features
 
 
-### Search
-TableUp has a simple search function that allows you to search by City, Cuisine type, or Restaurant name.
-Implementing search in this way affords the user great ease in only having to interact with a single field.
+### Posting Images
+Pictr allows you to upload multiple photos at a time, making it easy for users to add many photos without any hassle
+The images are stored on an AWS S3 bucket. 
 
-![home](./app/assets/images/search.png)
 
-The search logic was done in the Restaurant model. The main search by restaurant name method calls the search_by_city and search_by_cuisine methods to combine all the results.
+### Albums
 
-```
-def self.search_by_city(query)
-  param = '%' + query.downcase + '%'
-  Restaurant.where('lower(city) LIKE ?', param).limit(10)
-end
+Users can create albums of photos that they own. They are able to interface with a ui that allows them to click on a photo to toggle its presence in the album, they included photos display a checkmark when clicked.
 
-def self.search_by_cuisine(query)
-  param = '%' + query.downcase + '%'
-  Restaurant.where('lower(cuisine) LIKE ?', param).limit(10)
-end
+### Comments
 
-def self.search_results(query)
-  param = '%' + query.downcase + '%'
-  by_name = Restaurant.where('lower(name) LIKE ?', param).limit(10)
-  by_name + search_by_city(query) + search_by_cuisine(query)
-end
-```
-
-### Reservations
-Reservations can be made easily with the time and date calendar feature. The calendar is implemented with the [react-datepicker](https://github.com/Hacker0x01/react-datepicker) module. Users can quickly select both the date and time without having to move between fields. Just choose your party size and reserve!
+Users are allowed to comment on photos, the comment they make will appear on that photo's show page, it features a link to their profile along with their profile picture, and comment body.
 
 ![Calendar](./app/assets/images/reserve_calendar.png)
 
-### Additional resources
-To see development and planning documentation
-see the [wiki](https://github.com/ryan-mapa/tableup/wiki).
+### W
+To view the schema documentation, frontend state layout, and general planning
+go to the [wiki](https://github.com/rakinaa/full_stack_project/wiki).
 
 ### Future planned features
-+ Front page filtering by date/time user wants to reserve
-+ Favorite status that a user can save for a restaurant
-+ Protected routes so users can't view other user pages by url
-+ Allow users to offer a rating on review that updates average on restaurant's rating
++ Tags to label pictures with relevant information not present in the title
++ Seach functionality to allow users to search for key words and filter photos on the index page
++ Favoriting photos, allowing the user create a list of photos that they like
++ Groups letting users with common interests to post pictures and see the pictures of others in the group

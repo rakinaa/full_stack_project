@@ -19,6 +19,7 @@
     transform: translate(-50%, -50%);
     font-size: 40px;
     font-weight: 700;
+    color: white;
   }
 
   > a {
@@ -27,7 +28,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
-    color: black;
+    color: white;
 
     :hover {
       color: $soft-blue;

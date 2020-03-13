@@ -35,7 +35,7 @@ class Carousel extends React.Component {
             <img className="slide-img" src={photo.image_url} />
             <div className="slide-info">
               <p className="slide-title">{photo.title}</p>
-              <p>by {'a guy'}</p>
+              <p>by {this.props.users[photo.user_id].username}</p>
             </div>
           </div>
         ))}

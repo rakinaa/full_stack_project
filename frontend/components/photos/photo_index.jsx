@@ -11,7 +11,7 @@ class PhotoIndex extends React.Component {
       <div className="constrainer">
         <ul className="index-container">
           {this.props.photos.map((photo) => {
-            return <PhotoIndexItem photo={photo} />
+            return <PhotoIndexItem user={this.props.users[photo.user_id]} key={photo.id} photo={photo} />
           })}
         </ul>
       </div>

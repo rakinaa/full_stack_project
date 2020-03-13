@@ -17,7 +17,7 @@ const PhotoIndexItem = (props) => {
       </div>
       <div className='hud photo-info'>
         <p>{props.photo.title}</p>
-        <Link to='/'>{'by a guy'}</Link>
+        <Link to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
       </div>
       <FontAwesomeIcon className="hud ellipsis" icon={faEllipsisH} />
     </div>

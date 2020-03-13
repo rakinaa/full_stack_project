@@ -38,7 +38,7 @@ class AlbumForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { title, user_id, photos} = this.state;
-    this.props.createAlbum({title: title, user_id: user_id}, photos).then(this.props.history.push("/photos"))
+    this.props.createAlbum({title: title, user_id: user_id}, photos).then(this.props.history.push(`/users/${user_id}/albums`))
   }
 
   render() {
@@ -50,7 +50,7 @@ class AlbumForm extends React.Component {
         <div className="constrainer aform">
           <ul className="index-container">
             {this.props.photos.map((photo) => {
-              return <AlbumFormItem checked={this.state.photos.includes(photo.id)} toggle={this.toggleCheck(photo.id)} photo={photo} />
+              return <AlbumFormItem key={photo.id} checked={this.state.photos.includes(photo.id)} toggle={this.toggleCheck(photo.id)} photo={photo} />
             })}
           </ul>
         </div>

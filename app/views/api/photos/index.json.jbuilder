@@ -12,7 +12,6 @@ end
 
 json.users do
   @photos.each do |photo|
-    puts photo.user_id
     json.set! photo.user_id do
       json.extract! photo.user, :id, :username
     end

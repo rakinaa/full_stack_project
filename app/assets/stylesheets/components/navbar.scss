@@ -17,6 +17,18 @@
   align-items: center;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-home {
+  margin-left: 40px;
+  margin-top: 3px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
 .nav-logo {
   font-size: 1.7rem;
   font-weight: 950;

@@ -1,9 +1,10 @@
 json.album do
   json.extract! @album, :id, :title, :user_id
+  json.header_photo url_for(@album.header_photo)
 end
 
 json.user do
-  json.extract! @album.user, :id, :username
+  json.partial! "api/users/user", user: @album.user
 end
 
 json.set! :photos, {}

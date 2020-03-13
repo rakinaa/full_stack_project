@@ -8,6 +8,7 @@ const PhotoComments = (props) => {
       {props.comments.map((comment) => {
         return (
           <PhotoCommentItem 
+            key={comment.id}
             userpic={props.userpic} 
             user={props.users[comment.user_id]}
             body={comment.body}

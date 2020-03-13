@@ -26,6 +26,11 @@ class CommentForm extends React.Component {
 
     return (
       <div className='comment-form'>
+        {this.props.currUser ? 
+          <div className="cprofile-container">
+            <img className="profile-pic cshow-pic" src={this.props.currUser.profile_pic} alt="profile-pic"/>
+          </div> : null
+        }
         <textarea onChange={this.update.bind(this)} className="comment-submit"></textarea>
         <div className='comment-arrow'></div>
         <div className='outer-arrow'></div>

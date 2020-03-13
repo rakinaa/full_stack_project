@@ -3,7 +3,7 @@ json.photo do
 end 
 
 json.user do 
-  json.extract! @photo.user, :id, :username
+  json.partial! "api/users/user.json.jbuilder", user: @photo.user
 end
 
 json.set! :comments, {}
@@ -19,7 +19,7 @@ json.set! :commenters, {}
 json.commenters do
   @photo.commenters.each do |user|
     json.set! user.id do
-      json.extract! user, :id, :username
+      json.partial! "api/users/user.json.jbuilder", user: user
     end
   end
 end

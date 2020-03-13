@@ -50,7 +50,7 @@ class PhotoForm extends React.Component {
       formData.append(`photos[][image]`, photo.image)
       formData.append(`photos[][user_id]`, this.props.currentUser.id)
     }
-    this.props.processForm(formData).then(this.props.history.push(`/users/${this.props.currentUser.id}`))
+    this.props.processForm(formData).then(this.props.history.push(`/users/${this.props.currentUser.id}/photos`))
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }

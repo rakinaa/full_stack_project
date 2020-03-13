@@ -4,6 +4,7 @@ import PhotoIndex from './photo_index';
 
 const mapStateToProps = ({ entities, session }) => {
   return {
+    users: entities.users,
     photos: Object.values(entities.photos)
   };
 };

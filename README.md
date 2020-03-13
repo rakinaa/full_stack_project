@@ -1,209 +1,52 @@
-# Pictr
+![Logo](./app/assets/images/tableup_logo.png)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Flickr.svg/256px-Flickr.svg.png" align="top"
-     title="Size Limit logo by Anton Lovchikov" width="120">
+# TableUp
+[Tableup Heroku Link](https://tableupfs.herokuapp.com/#/)
 
-# React Tilt
+TableUp is a full-stack web app that helps you search for and make reservations at the all best restaurants. This app is inspired by OpenTable and is built with a Rails backend running PostgreSQL for the database. The front end is built out in the React.js/Redux framework.
 
-[![npm version][npm-badge]][npm-url]
-[![npm bundle size][downloads-badge]][npm-url]
-[![npm bundle size][size-badge]][npm-url]
-[![Build Status][build-badge]][build-url]
-[![Codecov Coverage][coverage-badge]][coverage-url]
-[![TypeScript][typescript-badge]][typescript-url]
-
-_Easily apply tilt hover effect on React components 👀_
-
-![](demo.gif)
-
-## Demo
-
-**[Demos](https://mkosir.github.io/react-parallax-tilt)** created with [React DemoTab 📑](https://github.com/mkosir/react-demo-tab)
-
-## Install
-
-```bash
-npm install react-parallax-tilt
-```
+![home](./app/assets/images/home.png)
 
 ## Features
 
-- Lightweight (<4kb), zero dependencies 📦
-- Supports **mouse** and **touch** events
-- Support for device tilting (**gyroscope**)
-- **Glare** effect 🌟 with custom props (color, position,...) [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--parallax-effect-glare-scale)
-- Events to keep track of component values 📐 (tilt, glare, mousemove,...) [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--events-all)
-- Many effects and functionalities that can be easily applied:
-  - **scale** on hover [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--scale)
-  - **disable** x/y axis [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--disable-x-y-axis)
-  - **flip** component vertically/horizontally [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--flip-vertically-horizontally)
-  - tilt hover effect on the **whole window** [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--track-on-window)
-  - tilt component with custom **manual input** 🕹 (joystick, slider etc.) [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--tilt-manual-input)
-  - **parallax** effect on overlaid images [🔗demo](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--parallax-effect-image)
 
-## Example
+### Search
+TableUp has a simple search function that allows you to search by City, Cuisine type, or Restaurant name.
+Implementing search in this way affords the user great ease in only having to interact with a single field.
 
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Tilt from 'react-parallax-tilt';
+![home](./app/assets/images/search.png)
 
-const App = () => {
-  return (
-    <Tilt>
-      <div style={{ height: '300px', backgroundColor: 'darkgreen' }}>
-        <h1>React Parallax Tilt 👀</h1>
-      </div>
-    </Tilt>
-  );
-};
+The search logic was done in the Restaurant model. The main search by restaurant name method calls the search_by_city and search_by_cuisine methods to combine all the results.
 
-ReactDOM.render(<App />, document.getElementById('root'));
+```
+def self.search_by_city(query)
+  param = '%' + query.downcase + '%'
+  Restaurant.where('lower(city) LIKE ?', param).limit(10)
+end
+
+def self.search_by_cuisine(query)
+  param = '%' + query.downcase + '%'
+  Restaurant.where('lower(cuisine) LIKE ?', param).limit(10)
+end
+
+def self.search_results(query)
+  param = '%' + query.downcase + '%'
+  by_name = Restaurant.where('lower(name) LIKE ?', param).limit(10)
+  by_name + search_by_city(query) + search_by_cuisine(query)
+end
 ```
 
-## Props
+### Reservations
+Reservations can be made easily with the time and date calendar feature. The calendar is implemented with the [react-datepicker](https://github.com/Hacker0x01/react-datepicker) module. Users can quickly select both the date and time without having to move between fields. Just choose your party size and reserve!
 
-All of the props are optional.  
-Below is the complete list of possible props and their options:
+![Calendar](./app/assets/images/reserve_calendar.png)
 
-> ▶︎ indicates the default value if there's one
+### Additional resources
+To see development and planning documentation
+see the [wiki](https://github.com/ryan-mapa/tableup/wiki).
 
-**tiltEnable**: _boolean_ ▶︎ `true`  
-Boolean to enable/disable tilt effect.
-
-**tiltReverse**: _boolean_ ▶︎ `false`  
-Reverse the tilt direction.
-
-**tiltAngleXInitial**: _number_ ▶︎ `0`  
-Initial tilt value (degrees) on x axis.
-
-**tiltAngleYInitial**: _number_ ▶︎ `0`  
-Initial tilt value (degrees) on y axis.
-
-**tiltMaxAngleX**: _number_ ▶︎ `20`  
-Range: `0 - 90`  
-Max tilt rotation (degrees) on x axis.
-
-**tiltMaxAngleY**: _number_ ▶︎ `20`  
-Range: `0 - 90`  
-Max tilt rotation (degrees) on y axis.
-
-**tiltAxis**: _Axis | null_ ▶︎ `null`  
-_Axis = 'x' | 'y'_  
-Which axis should be enabled. If null both are enabled.
-
-**tiltAngleXManual**: _number_ | null} ▶︎ `null`  
-Manual tilt rotation (degrees) on x axis.
-
-**tiltAngleYManual**: _number_ | null} ▶︎ `null`  
-Manual tilt rotation (degrees) on y axis.
-
-**glareEnable**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable glare effect.
-
-**glareMaxOpacity**: _number_ ▶︎ `0.7`  
-Range: `0 - 1`  
-The maximum glare opacity (0.5 = 50%, 1 = 100%, etc.).
-
-**glareColor**: _string_ ▶︎ `#ffffff`  
-Set color of glare effect.
-
-**glarePosition**: _GlarePosition_ ▶︎ `bottom`  
-_GlarePosition = 'top' | 'right' | 'bottom' | 'left' | 'all'_  
-Set position of glare effect.
-
-**glareReverse**: _boolean_ ▶︎ `false`  
-Reverse the glare direction.
-
-**scale**: _number_ ▶︎ `1`  
-Scale of the component (1.5 = 150%, 2 = 200%, etc.).
-
-**perspective**: _number_ ▶︎ `1000`  
-The perspective property defines how far the object (wrapped/child component) is away from the user.  
-The lower the more extreme the tilt gets.
-
-**flipVertically**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable vertical flip of component.
-
-**flipHorizontally**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable horizontal flip of component.
-
-**reset**: _boolean_ ▶︎ `true`  
-If the effects has to be reset on `onLeave` event.
-
-**transitionEasing**: _string_ ▶︎ `cubic-bezier(.03,.98,.52,.99)`  
-Easing of the transition when manipulating the component.
-
-**transitionSpeed**: _number_ ▶︎ `400`  
-Speed of the transition when manipulating the component.
-
-**trackOnWindow**: _boolean_ ▶︎ `false`  
-Track mouse and touch events on the whole window.
-
-**gyroscope**: _boolean_ ▶︎ `false`  
-Boolean to enable/disable device orientation detection.
-
-**onMove**: _Function_ => (**tiltAngleX**: _number_, **tiltAngleY**: _number_, **tiltAngleXPercentage**: _number_, **tiltAngleYPercentage**: _number_, **glareAngle**: _number_, **glareOpacity**: _number_, **eventType**: _string | null_)  
-Gets triggered when user moves on the component.
-
-**onEnter**: _Function_ => (**eventType**: _string | null_)  
-Gets triggered when user enters the component.
-
-**onLeave**: _Function_ => (**eventType**: _string | null_)  
-Gets triggered when user leaves the component.
-
-## Gyroscope - Device Orientation
-
-Please keep in mind that detecting device orientation is currently [experimental technology](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Guidelines/Conventions_definitions#Experimental).  
-Check the [browser compatibility](https://caniuse.com/#search=DeviceOrientation) before using this in production.  
-A few takeaways when using device orientation event:
-
-- always use secure origins (such as `https`)
-- it doesn't work in all browsers when using it in cross-origin `<iframe>` element
-- Chrome, Firefox, Safari do not handle the angles the same way (on some axes the directions are reversed)
-
-## Development
-
-_Easily set up a local development environment!_
-
-Build all the examples and starts storybook server on [localhost:9009](http://localhost:9009):
-
-- clone
-- `npm install`
-- `npm start`
-
-OR
-
-Clone this repo on your machine, navigate to its location in the terminal and run:
-
-```bash
-npm install
-npm link # link your local repo to your global packages
-npm run build:watch # build the files and watch for changes
-```
-
-Clone project repo that you wish to test with react-parallax-tilt library and run:
-
-```bash
-npm install
-npm link react-parallax-tilt # link your local copy into this project's node_modules
-npm start
-```
-
-**Start coding!** 🎉
-
-## Contributing
-
-All contributions are welcome!  
-Please take a moment to review guidelines [PR](.github/PULL_REQUEST_TEMPLATE.md) | [Issues](.github/ISSUE_TEMPLATE.md)
-
-[npm-url]: https://www.npmjs.com/package/react-parallax-tilt
-[npm-badge]: https://img.shields.io/npm/v/react-parallax-tilt.svg
-[size-badge]: https://img.shields.io/bundlephobia/minzip/react-parallax-tilt.svg
-[downloads-badge]: https://img.shields.io/npm/dm/react-parallax-tilt.svg?color=blue
-[build-badge]: https://travis-ci.com/mkosir/react-parallax-tilt.svg
-[build-url]: https://travis-ci.com/mkosir/react-parallax-tilt
-[coverage-badge]: https://codecov.io/gh/mkosir/react-parallax-tilt/branch/master/graph/badge.svg
-[coverage-url]: https://codecov.io/gh/mkosir/react-parallax-tilt
-[typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
-[typescript-url]: https://github.com/microsoft/TypeScript
+### Future planned features
++ Front page filtering by date/time user wants to reserve
++ Favorite status that a user can save for a restaurant
++ Protected routes so users can't view other user pages by url
++ Allow users to offer a rating on review that updates average on restaurant's rating

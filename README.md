@@ -19,7 +19,7 @@ Users can create albums of photos that they own. They are able to interface with
 
 Users are allowed to comment on photos, the comment they make will appear on that photo's show page, it features a link to their profile along with their profile picture, and comment body.
 
-### W
+### Wiki
 To view the schema documentation, frontend state layout, and general planning
 go to the [wiki](https://github.com/rakinaa/full_stack_project/wiki).
 

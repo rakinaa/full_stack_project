@@ -14,6 +14,5 @@ class Photo < ApplicationRecord
     through: :album_inclusions,
     source: :photo_album
 
-
   has_one_attached :image
 end

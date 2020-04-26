@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update, :destroy]
     resources :photo_albums, only: [:create, :update, :destroy, :show]
     resources :album_inclusions, only: [:create]
+    resources :tags, only: [:create]
   end
   root "static_pages#root"
 end

@@ -4,15 +4,21 @@ class Api::TagsController < ApplicationController
     if @tag
       @tagged_photo = TaggedPhoto.new(photo_id: params.photo_id)
       @tagged_photo.tag_id = @tag.id
-      @tagged_photo.save
-      render "api/photos/show"
+      if @tagged_photo.save 
+        render "api/photos/show"
+      else
+        render json: @tagged_photo.errors.full_messages, status: 422
+      end
     else
       @tag = Tag.new(name: tag_params.name)
       if @tag.save
         @tagged_photo = TaggedPhoto.new(photo_id: params.photo_id)
         @tagged_photo.tag_id = @tag.id
-        @tagged_photo.save
-        render "api/photos/show"
+        if @tagged_photo.save 
+          render "api/photos/show"
+        else
+          render json: @tagged_photo.errors.full_messages, status: 422
+        end
       else
         render json: @tag.errors.full_messages, status: 422
       end

@@ -1,6 +1,7 @@
 class Api::PhotoAlbumsController < ApplicationController
   def create
     @album = PhotoAlbum.new(album_params)
+    @album.user_id = currentUser.id
     if @album.save
       params[:inclusions].each do |inclusion|
         @inclusion = AlbumInclusion.new(photo_id: inclusion)
@@ -19,6 +20,6 @@ class Api::PhotoAlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:title, :user_id)
+    params.require(:album).permit(:title)
   end
 end

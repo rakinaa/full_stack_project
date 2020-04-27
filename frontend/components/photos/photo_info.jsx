@@ -5,9 +5,9 @@ import TagIndex from '../tags/tag_index';
 
 const PhotoInfo = (props) => {
   const edit = (
-    <div>
-      <input type="text" value={props.title}/>
-      <input type="text" value={props.description}/> 
+    <div className="photo-edit">
+      <input className="edit-title" type="text" value={props.title}/>
+      <textarea className="edit-desc" type="text" value={props.description}/> 
     </div>
   );
   const readOnly = (

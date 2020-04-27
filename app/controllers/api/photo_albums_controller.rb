@@ -1,7 +1,7 @@
 class Api::PhotoAlbumsController < ApplicationController
   def create
     @album = PhotoAlbum.new(album_params)
-    @album.user_id = currentUser.id
+    @album.user_id = current_user.id
     if @album.save
       params[:inclusions].each do |inclusion|
         @inclusion = AlbumInclusion.new(photo_id: inclusion)

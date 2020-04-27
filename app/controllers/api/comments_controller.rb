@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = currentUser.id
+    @comment.user_id = current_user.id
 
     if @comment.save
       # render "api/comment/show"

@@ -4,6 +4,18 @@ import PhotoComments from './photo_comments';
 import TagIndex from '../tags/tag_index';
 
 const PhotoInfo = (props) => {
+  const edit = (
+    <div>
+      <input type="text" value={props.title}/>
+      <input type="text" value={props.description}/> 
+    </div>
+  );
+  const readOnly = (
+    <div>
+      <p className="photo-title">{props.title}</p>
+      <p className="photo-desc">{props.description}</p>
+    </div>
+  );
   return (
     <div className='constrainer photo-info-container'>
       <div className='img-container'>
@@ -11,8 +23,7 @@ const PhotoInfo = (props) => {
       </div>
       <div className="photo-info-right">
         <Link className="poster-name" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
-        <p className="photo-title">{props.title}</p>
-        <p className="photo-desc">{props.description}</p>
+        { props.currentUser ? edit : readOnly }
         <PhotoComments 
           comments={props.comments} 
           users={props.users} 

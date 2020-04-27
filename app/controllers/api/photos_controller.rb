@@ -7,7 +7,8 @@ class Api::PhotosController < ApplicationController
   def create
     @photos = []
     params[:photos].each do |photo|
-      @photo = Photo.new(photo.permit(:title, :description, :image, :user_id))
+      @photo = Photo.new(photo.permit(:title, :description, :image))
+      @photo.user_id = currentUser.id
       @photo.save
       @photos.push(@photo)
       #   # render "api/photos/show"

@@ -8,8 +8,8 @@ const tagsReducer = (state={}, action) => {
     case RECEIVE_TAG:
       newState[action.payload.tag.id] = action.payload.tag;
       return newState;
-    case RECEIVE_TAGS:
-      return action.payload.tags;
+    // case RECEIVE_TAGS:
+    //   return action.payload.tags;
     case RECEIVE_PHOTO:
       return action.payload.tags;
     default:

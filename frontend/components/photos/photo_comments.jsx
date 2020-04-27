@@ -9,16 +9,13 @@ const PhotoComments = (props) => {
         return (
           <PhotoCommentItem 
             key={comment.id}
-            userpic={props.userpic} 
+            // userpic={props.userpic} 
             user={props.users[comment.user_id]}
             body={comment.body}
           />
         )
       })}
-      <CommentForm 
-        currUser={props.currUser}
-        photoId={props.photoId}
-      />
+      {props.currUser ? ( <CommentForm currUser={props.currUser} photoId={props.photoId} />) : null}
     </div>
   )
 }

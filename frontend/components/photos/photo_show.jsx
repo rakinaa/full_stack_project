@@ -14,7 +14,7 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    const { users, photo, comments } = this.props;
+    const { currentUser, users, photo, comments, tags } = this.props;
     if (!this.props.users || !this.props.photo) return null;
     return (
       <div>
@@ -22,10 +22,12 @@ class PhotoShow extends React.Component {
         <PhotoInfo 
           title={photo.title} 
           description={photo.description} 
-          userpic={"http://via.placeholder.com/640x360"}
+          // userpic={"http://via.placeholder.com/640x360"}
           user={users[photo.user_id]}
           users={users}
+          currentUser={currentUser}
           comments={comments}
+          tags={tags}
           photoId={photo.id}
         />
       </div>

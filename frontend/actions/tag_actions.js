@@ -9,8 +9,8 @@ export const receiveTag = payload => {
   }
 }
 
-export const fetchTag = tagId => dispatch => {
-  return APIUtil.getTag(tagId).then(
+export const createTag = tagId => dispatch => {
+  return APIUtil.createTag(tagId).then(
     (tag) => dispatch(receiveTag(tag)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   )

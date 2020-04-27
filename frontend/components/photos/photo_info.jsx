@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotoComments from './photo_comments';
+import TagIndex from '../tags/tag_index';
 
 const PhotoInfo = (props) => {
   return (
@@ -15,11 +16,12 @@ const PhotoInfo = (props) => {
         <PhotoComments 
           comments={props.comments} 
           users={props.users} 
-          userpic={props.userpic} 
-          currUser={props.user}
+          // userpic={props.userpic} 
+          currUser={props.currentUser}
           photoId={props.photoId}
         />
       </div>
+      <TagIndex tags={props.tags} />
     </div>
   )
 }

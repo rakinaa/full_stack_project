@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import { getPhoto } from '../../actions/photo_actions';
 import PhotoShow from './photo_show';
 
-const mapStateToProps = ({ entities }, ownProps) => {
+const mapStateToProps = ({ session, entities }, ownProps) => {
   return {
     photo: entities.photos[ownProps.match.params.photoId] || '',
+    currentUser: session.currentUser || '',
     users: entities.users || '',
-    comments: Object.values(entities.comments) || ''
+    comments: Object.values(entities.comments) || '',
+    tags: Object.values(entities.tags) || ''
   };
 };
 

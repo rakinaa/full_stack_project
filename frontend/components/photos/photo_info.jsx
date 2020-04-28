@@ -8,14 +8,14 @@ const PhotoInfo = (props) => {
     <div className="photo-edit">
       <input 
         onChange={props.update("title")} 
-        onfocusout={props.editPhoto}
+        onBlur={props.editPhoto}
         className="edit-title" 
         type="text" 
         value={props.title}
       />
       <textarea 
         onChange={props.update("description")} 
-        onfocusout={props.editPhoto}
+        onBlur={props.editPhoto}
         className="edit-desc" 
         type="text" 
         value={props.description}

@@ -8,7 +8,7 @@ const TagIndex = (props) =>  {
       <div className="tag-index-container">
         <h3 className="tag-header">Tags:</h3>
         <div className="tags">
-          {tags.map(tag => <Tag tag={tag} />)}
+          {tags.map(tag => <Tag key={tag.id} tag={tag} />)}
         </div>
       </div>
   )

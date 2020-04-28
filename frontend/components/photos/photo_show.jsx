@@ -6,8 +6,8 @@ class PhotoShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.photo.title,
-      description: this.props.photo.description
+      title: props.photo.title,
+      description: props.photo.description
     }
   }
 
@@ -30,7 +30,8 @@ class PhotoShow extends React.Component {
   }
 
   editPhoto(e) {
-    this.props.updatePhoto(this.props.match.params.photoId, this.state)
+    console.log("editted");
+    // this.props.updatePhoto(this.props.match.params.photoId, this.state)
   }
   
   render() {
@@ -40,8 +41,8 @@ class PhotoShow extends React.Component {
       <div>
         <PhotoDisplay photo={photo} />
         <PhotoInfo 
-          title={photo.title} 
-          description={photo.description}
+          title={this.state.title} 
+          description={this.state.description}
           editPhoto={this.editPhoto.bind(this)}
           update={this.update.bind(this)}
           // userpic={"http://via.placeholder.com/640x360"}

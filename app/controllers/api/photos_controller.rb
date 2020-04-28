@@ -28,10 +28,23 @@ class Api::PhotosController < ApplicationController
     render "api/photos/show"
   end
 
+  def update
+    @photo = Photo.find_by(id: params[:id])
+    if @photo.user_id == current_user.id
+      if @photo.update(photo_params) 
+        render "api/photos/show"
+      else
+        render json: @photo.errors.full_messages
+      end
+    else
+      render json: ['Unauthorized edit request']
+    end
+  end
+
   private
 
   def photo_params
-    # params.roquire(:photo).permit(:title, :description, :image, :user_id)
+    params.require(:photo).permit(:title, :description)
     # params.require(:photos) do |photo|
     #   photo.permit(:title, :description, :image, :user_id)
     # end

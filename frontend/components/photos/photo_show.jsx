@@ -14,7 +14,7 @@ class PhotoShow extends React.Component {
   }
 
   editPhoto(photoData) {
-    this.props
+    this.props.updatePhoto(this.props.match.params.photoId, photoData)
   }
   
   render() {
@@ -25,7 +25,8 @@ class PhotoShow extends React.Component {
         <PhotoDisplay photo={photo} />
         <PhotoInfo 
           title={photo.title} 
-          description={photo.description} 
+          description={photo.description}
+          editPhoto={this.editPhoto.bind(this)}
           // userpic={"http://via.placeholder.com/640x360"}
           user={users[photo.user_id]}
           users={users}

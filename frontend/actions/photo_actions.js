@@ -67,9 +67,9 @@ export const getPhoto = (photoId) => (dispatch) => {
   )
 }
 
-// export const updatePhoto = (photo) => (dispatch) => {
-//   return APIUtil.updatePhoto(photo).then(
-//     (photo) => dispatch(receivePhoto(photo)),
-//     (err) => dispatch(receiveErrors(err.responseJSON))
-//   )
-// }
+export const updatePhoto = (photoId, photo) => (dispatch) => {
+  return APIUtil.updatePhoto(photoId, photo).then(
+    (photo) => dispatch(receivePhoto(photo)),
+    (err) => dispatch(receiveErrors(err.responseJSON))
+  )
+}

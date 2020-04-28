@@ -36,7 +36,7 @@ const PhotoInfo = (props) => {
       </div>
       <div className="photo-info-right">
         <Link className="poster-name" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
-        { props.currentUser ? edit : readOnly }
+        { props.currentUser.id === props.user.id ? edit : readOnly }
         <PhotoComments 
           comments={props.comments} 
           users={props.users} 

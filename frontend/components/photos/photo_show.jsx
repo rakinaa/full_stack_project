@@ -6,8 +6,8 @@ class PhotoShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      description: ""
+      title: this.props.photo.title,
+      description: this.props.photo.description
     }
   }
 
@@ -18,7 +18,6 @@ class PhotoShow extends React.Component {
       });
     } 
   }
-
 
   componentDidMount() {
     this.props.getPhoto(this.props.match.params.photoId);
@@ -38,8 +37,10 @@ class PhotoShow extends React.Component {
   }
 
   editPhoto(e) {
-    console.log("editted");
-    // this.props.updatePhoto(this.props.match.params.photoId, this.state)
+    const { title, description } = this.props.photo;
+    if (this.state.title !== title || this.state.description !== description) {
+      this.props.updatePhoto(this.props.match.params.photoId, {photo: this.state})
+    }
   }
   
   render() {

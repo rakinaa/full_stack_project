@@ -11,16 +11,8 @@ class Api::PhotosController < ApplicationController
       @photo.user_id = current_user.id
       @photo.save
       @photos.push(@photo)
-      #   # render "api/photos/show"
-      # else
-      #   # render json: @photo.errors.full_messages
-      # end
     end
-    
     render :index
-    # p params[:photos].to_a
-    # Photo.create(params[:photos].to_a)
-    # render "api/photos/show"
   end
 
   def show

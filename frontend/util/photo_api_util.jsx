@@ -8,6 +8,14 @@ export const createPhoto = photoData => {
   })
 };
 
+export const updatePhoto = (photoId, photoData) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/photos/${photoId}`,
+    data: photoData
+  })
+};
+
 export const getPhotos = () => {
   return $.ajax({
     method: 'GET',

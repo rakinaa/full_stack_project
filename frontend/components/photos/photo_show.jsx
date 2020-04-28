@@ -3,6 +3,22 @@ import PhotoDisplay from './photo_display';
 import PhotoInfo from './photo_info';
 
 class PhotoShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.photo.title,
+      description: this.props.photo.description
+    }
+  }
+
+  update(field) {
+    return e => {
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+    } 
+  }
+
   componentDidMount() {
     this.props.getPhoto(this.props.match.params.photoId);
   }
@@ -13,8 +29,8 @@ class PhotoShow extends React.Component {
     }
   }
 
-  editPhoto(photoData) {
-    this.props.updatePhoto(this.props.match.params.photoId, photoData)
+  editPhoto(e) {
+    this.props.updatePhoto(this.props.match.params.photoId, this.state)
   }
   
   render() {
@@ -27,6 +43,7 @@ class PhotoShow extends React.Component {
           title={photo.title} 
           description={photo.description}
           editPhoto={this.editPhoto.bind(this)}
+          update={this.update.bind(this)}
           // userpic={"http://via.placeholder.com/640x360"}
           user={users[photo.user_id]}
           users={users}

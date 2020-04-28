@@ -16,6 +16,7 @@ const PhotoInfo = (props) => {
       <p className="photo-desc">{props.description}</p>
     </div>
   );
+
   return (
     <div className='constrainer photo-info-container'>
       <div className='img-container'>

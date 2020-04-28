@@ -12,6 +12,10 @@ class PhotoShow extends React.Component {
       this.props.getPhoto(this.props.match.params.photoId);
     }
   }
+
+  editPhoto(photoData) {
+    this.props
+  }
   
   render() {
     const { currentUser, users, photo, comments, tags } = this.props;

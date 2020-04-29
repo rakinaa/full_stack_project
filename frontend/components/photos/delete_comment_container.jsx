@@ -16,4 +16,5 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteForm);
+const DeleteCommentContainer = connect(mapStateToProps, mapDispatchToProps)(DeleteForm);
+export default DeleteCommentContainer;

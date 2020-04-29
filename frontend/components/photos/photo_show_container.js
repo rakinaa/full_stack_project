@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { getPhoto, updatePhoto } from '../../actions/photo_actions';
 import PhotoShow from './photo_show';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ session, entities }, ownProps) => {
   return {
@@ -16,6 +17,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getPhoto: (photoId) => dispatch(getPhoto(photoId)),
     updatePhoto: (photoId, photoData) => dispatch(updatePhoto(photoId, photoData)),
+    openModal: (modal, modalData) => dispatch(openModal(modal, modalData))
   };
 };
 

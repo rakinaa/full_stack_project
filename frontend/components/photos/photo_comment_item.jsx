@@ -12,7 +12,9 @@ const PhotoCommentItem = (props) => {
       <div className='comment-data'>
         <Link className="poster-name comment-poster" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
         <p className="comment-body">{props.body}</p>
-        <FontAwesomeIcon className="comment-delete" icon={faTrash} />
+        <div className="comment-controls">
+          <FontAwesomeIcon className="comment-delete" icon={faTrash} />
+        </div>
       </div>
     </div>
   )

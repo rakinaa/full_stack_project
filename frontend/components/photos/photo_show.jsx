@@ -44,7 +44,7 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    const { currentUser, users, photo, comments, tags } = this.props;
+    const { currentUser, users, photo, comments, tags, openModal } = this.props;
     if (!this.props.users || !this.props.photo) return null;
     return (
       <div>
@@ -54,6 +54,7 @@ class PhotoShow extends React.Component {
           description={this.state.description}
           editPhoto={this.editPhoto.bind(this)}
           update={this.update.bind(this)}
+          openModal={openModal}
           // userpic={"http://via.placeholder.com/640x360"}
           user={users[photo.user_id]}
           users={users}

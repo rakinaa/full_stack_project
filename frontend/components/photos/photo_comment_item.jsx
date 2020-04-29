@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const PhotoCommentItem = (props) => {
   return (
@@ -10,6 +12,7 @@ const PhotoCommentItem = (props) => {
       <div className='comment-data'>
         <Link className="poster-name comment-poster" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
         <p className="comment-body">{props.body}</p>
+        <FontAwesomeIcon className="comment-delete" icon={faTrash} />
       </div>
     </div>
   )

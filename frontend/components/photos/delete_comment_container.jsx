@@ -1,34 +1,19 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import { openModal, closeModal } from '../../actions/modal_actions';
-import SessionForm from './session_form';
+import { deleteComment } from '../../actions/comment_actions';
+import { closeModal } from '../../actions/modal_actions';
+import DeleteForm from '../modal/delete_form';
 
-
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = () => {
   return {
-    initialState: {
-      username: '',
-      password: ''
-    },
-    errors: errors.session,
-    formType: 'login',
-    heading: 'Log in to Pictr',
-    message: 'Not a Pictr member? ',
-    btnText: 'Log In'
+    message: 'Are you sure you want to delete this comment?',
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(login(user)),
-    otherForm: (
-      <span className="redirect-link" onClick={() => dispatch(openModal('signup'))}>
-        Sign up here
-      </span>
-    ),
-    hasEmail: false,
+    delete: (commentId) => dispatch(deleteComment(commentId)),
     closeModal: () => dispatch(closeModal())
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteForm);

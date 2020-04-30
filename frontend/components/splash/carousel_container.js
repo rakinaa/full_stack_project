@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getPhotos } from '../../actions/photo_actions';
+import { getShowcase } from '../../actions/photo_actions';
 import Carousel from './carousel';
 import { withRouter } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ const mapStateToProps = ({ entities }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getPhotos: () => dispatch(getPhotos())
+    getShowcase: () => dispatch(getShowcase())
   };
 };
 

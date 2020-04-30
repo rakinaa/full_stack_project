@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 class Carousel extends React.Component {
 
   componentDidMount() {
-    this.props.getPhotos().then(() => {
+    this.props.getShowcase().then(() => {
       let slideIndex = 0;
       function showSlides() {
         let i;

@@ -5,7 +5,7 @@ const DeleteForm = (props) => {
     <div className="delete-form-container">
       <h3>{props.message}</h3>
       <div className="delete-confirm">
-        <a onClick={() => props.delete(props.commentId)} className="red-button">Yes</a>
+        <a onClick={() => props.delete(props.commentId).then(() => props.closeModal())} className="red-button">Yes</a>
         <a onClick={() => props.closeModal()} className="blue-button">No</a>
       </div>
 

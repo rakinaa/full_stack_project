@@ -5,7 +5,8 @@ const DeleteForm = (props) => {
     <div className="delete-form-container">
       <h3>{props.message}</h3>
       <div className="delete-confirm">
-        <a className="blue-button"></a>
+        <a className="red-button">Yes</a>
+        <a className="blue-button">No</a>
       </div>
 
     </div>

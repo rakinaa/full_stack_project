@@ -6,7 +6,7 @@ import DeleteForm from '../modal/delete_form';
 const mapStateToProps = ({ ui }) => {
   return {
     message: 'Are you sure you want to delete this comment?',
-    commentId: ui.modalData.data
+    commentId: ui.modalData.commentId
   };
 };
 

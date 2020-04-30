@@ -17,10 +17,10 @@ const receiveComments = (payload) => {
     payload
   }
 }
-const removeComment = (commentId) => {
+const removeComment = (payload) => {
   return {
     type: REMOVE_COMMENT,
-    commentId
+    payload
   }
 }
 
@@ -47,7 +47,7 @@ export const getComments = () => (dispatch) => {
 
 export const deleteComment = (commentId) => (dispatch) => {
   return APIUtil.deleteComment(commentId).then(
-    (commentId) => dispatch(removeComment(commentId)),
+    (payload) => dispatch(removeComment(payload)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   )
 }

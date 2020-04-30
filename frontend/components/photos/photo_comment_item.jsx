@@ -13,7 +13,11 @@ const PhotoCommentItem = (props) => {
         <Link className="poster-name comment-poster" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
         <p className="comment-body">{props.body}</p>
         <div className="comment-controls">
-          <FontAwesomeIcon onClick={() => {console.log("opened");}} className="comment-delete" icon={faTrash} />
+          <FontAwesomeIcon 
+            onClick={() => props.openModal("deleteComment", {label: "commentId", data: props.key})} 
+            className="comment-delete" 
+            icon={faTrash} 
+          />
         </div>
       </div>
     </div>

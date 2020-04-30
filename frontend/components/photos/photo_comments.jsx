@@ -10,6 +10,7 @@ const PhotoComments = (props) => {
           <PhotoCommentItem 
             key={comment.id}
             openModal={props.openModal}
+            currUser={props.currUser}
             // userpic={props.userpic} 
             user={props.users[comment.user_id]}
             body={comment.body}

@@ -4,6 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const PhotoCommentItem = (props) => {
+  const commentControls = (
+    <div className="comment-controls">
+      <FontAwesomeIcon 
+        onClick={() => props.openModal("deleteComment", {label: "commentId", data: props.id})} 
+        className="comment-delete" 
+        icon={faTrash} 
+      />
+    </div>
+  );
+
   return (
     <div className='comment-container'>
       <div className="img-container">
@@ -12,13 +22,7 @@ const PhotoCommentItem = (props) => {
       <div className='comment-data'>
         <Link className="poster-name comment-poster" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
         <p className="comment-body">{props.body}</p>
-        <div className="comment-controls">
-          <FontAwesomeIcon 
-            onClick={() => props.openModal("deleteComment", {label: "commentId", data: props.id})} 
-            className="comment-delete" 
-            icon={faTrash} 
-          />
-        </div>
+        {props.currUser.id === props.user.id ? commentControls : null}
       </div>
     </div>
   )

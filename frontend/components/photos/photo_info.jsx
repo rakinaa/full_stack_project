@@ -38,6 +38,7 @@ const PhotoInfo = (props) => {
         <Link className="poster-name" to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
         { props.currentUser.id === props.user.id ? edit : readOnly }
         <PhotoComments 
+          openModal={props.openModal}
           comments={props.comments} 
           users={props.users} 
           // userpic={props.userpic} 

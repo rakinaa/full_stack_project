@@ -23,6 +23,13 @@ export const getPhotos = () => {
   })
 };
 
+export const getShowcase = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/showcase_photos'
+  })
+};
+
 export const getPhoto = (photoId) => {
   return $.ajax({
     method: 'GET',

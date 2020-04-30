@@ -53,6 +53,13 @@ export const getPhotos = () => (dispatch) => {
   )
 }
 
+export const getShowcase = () => (dispatch) => {
+  return APIUtil.getShowcase().then(
+    (payload) => dispatch(receivePhotos(payload)),
+    (err) => dispatch(receiveErrors(err.responseJSON))
+  )
+}
+
 export const deletePhoto = (photoId) => (dispatch) => {
   return APIUtil.deletePhoto(photoId).then(
     (photoId) => dispatch(removePhoto(photoId)),

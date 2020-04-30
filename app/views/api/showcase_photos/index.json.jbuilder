@@ -1,3 +1,4 @@
+json.set! :photos, {}
 json.photos do 
   @showcase_photos.each do |showcase_photo|
     json.set! showcase_photo.photo_id do
@@ -6,6 +7,8 @@ json.photos do
   end
 end
 
+
+json.set! :users, {}
 json.users do
   @showcase_photos.each do |showcase_photo|
     json.set! showcase_photo.photo.user_id do

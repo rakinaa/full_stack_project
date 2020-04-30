@@ -6,6 +6,7 @@ export default function modalDataReducer(state={}, action) {
   switch (action.type) {
     case OPEN_MODAL:
       newState[action.modalData.label] = action.modalData.data;
+      return newState
     case CLOSE_MODAL:
       return {};
     default:

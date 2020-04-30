@@ -14,7 +14,7 @@ const PhotoCommentItem = (props) => {
         <p className="comment-body">{props.body}</p>
         <div className="comment-controls">
           <FontAwesomeIcon 
-            onClick={() => props.openModal("deleteComment", {label: "commentId", data: props.key})} 
+            onClick={() => props.openModal("deleteComment", {label: "commentId", data: props.id})} 
             className="comment-delete" 
             icon={faTrash} 
           />

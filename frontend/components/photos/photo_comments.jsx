@@ -13,6 +13,7 @@ const PhotoComments = (props) => {
             // userpic={props.userpic} 
             user={props.users[comment.user_id]}
             body={comment.body}
+            id={comment.id}
           />
         )
       })}

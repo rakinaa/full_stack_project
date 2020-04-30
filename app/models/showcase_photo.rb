@@ -1,0 +1,2 @@
+class ShowcasePhoto < ApplicationRecord
+end

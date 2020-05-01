@@ -6,20 +6,41 @@ class Carousel extends React.Component {
   componentDidMount() {
     this.props.getShowcase().then(() => {
       let slideIndex = 0;
+      let slides = document.getElementsByClassName("slide");
+      slides[0].classList.remove("dnone");
+      // for (i = 0; i < slides.length; i++) {
+      //   slides[i].style.opacity = 0;
+      // }
+      // slides[0].style.opacity = 1;
       function showSlides() {
         let i;
-        let slides = document.getElementsByClassName("slide");
         if (slides.length > 0) {
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+          if (slideIndex >= slides.length) {
+            slideIndex = 0;
           }
+          let nextSlide = slideIndex+1;
+          if (slideIndex === slides.length - 1) { 
+            nextSlide = 0;
+          }
+          console.log("hi");
+          slides[slideIndex].classList.remove("fade-in");
+          slides[slideIndex].classList.add("fade-out");
+          slides[nextSlide].classList.remove("fade-out");
+          slides[nextSlide].classList.add("fade-in");
           slideIndex++;
-          if (slideIndex > slides.length) { slideIndex = 1 }
-          slides[slideIndex - 1].style.display = "block";
+          // for (i = 0; i < slides.length; i++) {
+          //   slides[i].style.display = "none";
+          //   slides[i].classList.add("fade-out")
+          // }
+          // slideIndex++;
+          // if (slideIndex >= slides.length) { slideIndex = 1 }
+          // console.log(slideIndex);
+          // slides[slideIndex].style.display = "none";
+          // slides[slideIndex - 1].style.display = "block";
           setTimeout(showSlides, 4000);
         }
       }
-      showSlides();
+      setTimeout(showSlides, 4000);
     })
   }
 
@@ -31,7 +52,7 @@ class Carousel extends React.Component {
     return (
       <div className="carousel-container">
         {this.props.photos.map((photo) => (
-          <div key={photo.id} className="slide fade">
+          <div key={photo.id} className="slide dnone">
             <img className="slide-img" src={photo.image_url} />
             <div className="slide-info">
               <p className="slide-title">{photo.title}</p>

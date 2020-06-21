@@ -1,0 +1,20 @@
+.dev-links {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dev-link {
+  font-size: 20px;
+  color: white;
+}
+
+.second-link {
+  position: absolute;
+  opacity: 0;
+}
+
+.third-link {
+  position: absolute;
+  opacity: 0;
+}

@@ -1,20 +1,41 @@
-.dev-links {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.dev-link {
-  font-size: 20px;
-  color: white;
-}
-
 .second-link {
   position: absolute;
+  left: 0;
   opacity: 0;
+  transition: all 0.3s;
+  width: 35px;
 }
 
 .third-link {
   position: absolute;
+  left: 0;
   opacity: 0;
+  transition: all 0.3s;
+  width: 35px;
+}
+
+.dev-links {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  &:hover .second-link {
+    left: -35px;
+    opacity: 1;
+  }
+
+  &:hover .third-link {
+    left: -70px;
+    opacity: 1;
+  }
+}
+
+.dev-link {
+  font-size: 30px;
+  color: white;
+
+  &:hover {
+    color: $soft-blue;
+  }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GreetingContainer from "./greeting/greeting_container";
 import SearhBar from "./searchbar";
+import DevLinks from "./dev_links";
 
 const NavBar = (props) => {
   return (
@@ -25,6 +26,7 @@ const NavBar = (props) => {
         </div>
         <SearhBar />
         <div className="nav-right">
+          <DevLinks />
           <GreetingContainer />
         </div>
       </div>

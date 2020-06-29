@@ -22,6 +22,8 @@ The images are stored on an AWS S3 bucket.
 
 Users can create albums of photos that they own. They are able to interface with a ui that allows them to click on a photo to toggle its presence in the album, they included photos display a checkmark when clicked.
 
+![album](app/assets/images/albums.png)
+
 ### Comments
 
 Users are allowed to comment on photos, the comment they make will appear on that photo's show page, it features a link to their profile along with their profile picture, and comment body.

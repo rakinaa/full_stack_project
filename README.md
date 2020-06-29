@@ -7,7 +7,7 @@ Pictr is a full-stack web app that allows you to share photos with others. This 
 
 
 ### Posting Images
-Pictr allows you to upload multiple photos at a time, making it easy for users to add many photos without any hassle
+Pictr allows you to upload multiple photos at a time, making it easy for users to add as many photos as they want without any hassle
 The images are stored on an AWS S3 bucket. 
 
 

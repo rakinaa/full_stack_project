@@ -16,6 +16,7 @@ The photos index page features a flexible layout that dynamically resizes images
 Pictr allows you to upload multiple photos at a time, making it easy for users to add as many photos as they want without any hassle
 The images are stored on an AWS S3 bucket. 
 
+![post-png](app/assets/images/photo_post.png)
 
 ### Albums
 

@@ -7,6 +7,10 @@ Pictr is a full-stack web app that allows you to share photos with others. This 
 
 ## Features
 
+### Photos Index Page
+The photos index page features a flexible layout that dynamically resizes images to fit within its container.
+
+![show-png](app/assets/images/show_page.png)
 
 ### Posting Images
 Pictr allows you to upload multiple photos at a time, making it easy for users to add as many photos as they want without any hassle

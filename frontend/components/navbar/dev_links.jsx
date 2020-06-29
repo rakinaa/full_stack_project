@@ -9,13 +9,21 @@ import {
 const DevLinks = (props) => {
   return (
     <div className="dev-links">
-      <a href="" className="dev-link">
+      <a href="https://github.com/rakinaa" target="_blank" className="dev-link">
         <FontAwesomeIcon icon={faGithub} />
       </a>
-      <a href="" className="dev-link second-link">
+      <a
+        href="https://www.linkedin.com/in/rakin-rouf-6607b21a4/"
+        target="_blank"
+        className="dev-link second-link"
+      >
         <FontAwesomeIcon icon={faLinkedinIn} />
       </a>
-      <a href="" className="dev-link third-link">
+      <a
+        href="https://angel.co/u/rakin-rouf"
+        target="_blank"
+        className="dev-link third-link"
+      >
         <FontAwesomeIcon icon={faAngellist} />
       </a>
     </div>

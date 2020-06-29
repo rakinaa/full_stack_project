@@ -3,6 +3,8 @@
 
 Pictr is a full-stack web app that allows you to share photos with others. This app is made in the image of Flickr. It is built with Rails and PostreSQL backend, with AWS s3 storing the image files. The Frontend is built with React, Redux, and SASS
 
+![intro-png](app/assets/images/intro.png)
+
 ## Features
 
 

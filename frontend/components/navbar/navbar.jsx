@@ -24,7 +24,7 @@ const NavBar = (props) => {
             </Link>
           ) : null}
         </div>
-        <SearhBar />
+        {/* <SearhBar /> */}
         <div className="nav-right">
           <DevLinks />
           <GreetingContainer />

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const CommentEditForm = (props) => {
   const [body, setBody] = useState("");
+  const dispatch = useDispatch();
 
   const update = (e) => {
     setBody(e.currentTarget.value);
@@ -18,7 +20,9 @@ const CommentEditForm = (props) => {
         value={body}
         className="comment-edit-textarea"
       ></textarea>
-      <button className="blue-button">Submit</button>
+      <button onClick={handleSubmit} className="blue-button">
+        Submit
+      </button>
     </div>
   );
 };

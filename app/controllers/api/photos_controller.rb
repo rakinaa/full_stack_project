@@ -33,6 +33,20 @@ class Api::PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    if @photo.user_id == current_user.id
+      @photo.destroy
+      if @photo.destroyed?
+        render :show
+      else
+        render json: @photo.errors.full_messages, status: 422
+      end
+    else
+      render json: ["Unauthorized deletion"], status: 422
+    end
+  end
+
   private
 
   def photo_params

@@ -7,6 +7,10 @@ const CommentEditForm = (props) => {
     setBody(e.currentTarget.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="comment-edit-form">
       <textarea
@@ -14,6 +18,7 @@ const CommentEditForm = (props) => {
         value={body}
         className="comment-edit-textarea"
       ></textarea>
+      <button className="blue-button">Submit</button>
     </div>
   );
 };

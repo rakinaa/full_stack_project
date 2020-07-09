@@ -6,6 +6,7 @@ import {
 } from "../../actions/photo_actions";
 import PhotoShow from "./photo_show";
 import { openModal } from "../../actions/modal_actions";
+import { createComment } from "../../actions/comment_actions";
 
 const mapStateToProps = ({ session, entities }, ownProps) => {
   return {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     updatePhoto: (photoId, photoData) =>
       dispatch(updatePhoto(photoId, photoData)),
     deletePhoto: (photoId) => dispatch(deletePhoto(photoId)),
+    createComment: (comment) => dispatch(createComment(comment)),
     openModal: (modal, modalData) => dispatch(openModal(modal, modalData)),
   };
 };

@@ -66,6 +66,7 @@ class PhotoShow extends React.Component {
           description={this.state.description}
           editPhoto={this.editPhoto.bind(this)}
           update={this.update.bind(this)}
+          createComment={this.props.createComment}
           openModal={openModal}
           user={users[photo.user_id]}
           users={users}

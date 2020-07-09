@@ -10,6 +10,19 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def update
+    @comment = Comment.find_by(id: params[:id])
+    if @comment.user_id == current_user.id
+      if @comment.update(comment_params) 
+        render "api/photos/show"
+      else
+        render json: @comment.errors.full_messages
+      end
+    else
+      render json: ['Unauthorized edit request']
+    end
+  end
+
   def show
     @comment = Comment.find(params[:id])
     render "api/comments/show"

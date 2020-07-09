@@ -46,6 +46,7 @@ const PhotoInfo = (props) => {
         <PhotoComments
           openModal={props.openModal}
           comments={props.comments}
+          createComment={props.createComment}
           users={props.users}
           // userpic={props.userpic}
           currUser={props.currentUser}

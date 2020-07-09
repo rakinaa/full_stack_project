@@ -12,7 +12,7 @@ const CommentEditForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateComment({ body: body }, props.photoId)).then(() =>
+    dispatch(updateComment({ body: body }, props.id)).then(() =>
       props.setEdittable(false)
     );
   };

@@ -48,7 +48,11 @@ const PhotoCommentItem = (props) => {
           {props.currUser.id === props.user.id ? commentControls : null}
         </div>
       ) : (
-        <CommentEditForm body={props.body} setEdittable={setEdittable} />
+        <CommentEditForm
+          id={props.id}
+          body={props.body}
+          setEdittable={setEdittable}
+        />
       )}
     </div>
   );

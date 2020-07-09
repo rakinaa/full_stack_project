@@ -81,7 +81,7 @@ class PhotoForm extends React.Component {
         <div>
           <input
             type="button"
-            className="blue-button upload-btn"
+            className="blue-button upload-button"
             value={this.props.btnText}
             onClick={this.handleClick.bind(this)}
           />
@@ -102,7 +102,7 @@ class PhotoForm extends React.Component {
               <img className="preview-img" src={data.imageUrl} />
             ) : null;
             return (
-              <form className="photo-form-box">
+              <form key={idx} className="photo-form-box">
                 {/* {this.renderErrors()} */}
                 <div className="upload-display">{preview}</div>
                 <div className="upload-inputs">
@@ -117,7 +117,6 @@ class PhotoForm extends React.Component {
                     className="form-description"
                     onChange={this.update("description", idx)}
                   />{" "}
-                  */}
                 </div>
               </form>
             );

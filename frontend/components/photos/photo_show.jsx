@@ -50,7 +50,17 @@ class PhotoShow extends React.Component {
     if (!this.props.users || !this.props.photo) return null;
     return (
       <div>
-        <PhotoDisplay photo={photo} />
+        <PhotoDisplay
+          photo={photo}
+          currentUser={currentUser}
+          delete={() =>
+            this.props
+              .deletePhoto(photo.id)
+              .then(() =>
+                this.props.history.push(`/users/${currentUser.id}/photos`)
+              )
+          }
+        />
         <PhotoInfo
           title={this.state.title}
           description={this.state.description}

@@ -8,7 +8,11 @@ const PhotoDisplay = (props) => {
         src={props.photo.image_url}
         alt={props.photo.title}
       />
-      <button className="blue-button del-btn">Delete Photo</button>
+      {props.currentUser.id == props.photo.user_id && (
+        <button onClick={props.delete} className="blue-button del-btn">
+          Delete Photo
+        </button>
+      )}
     </div>
   );
 };

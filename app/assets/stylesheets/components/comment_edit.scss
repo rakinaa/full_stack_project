@@ -1,2 +1,18 @@
+.comment-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .comment-edit-textarea {
+  padding: 12px;
+  height: 150px;
+  width: 400px;
+}
+
+.comment-btn-container {
+  margin-top: 10px;
+
+  > button {
+    margin-right: 5px;
+  }
 }

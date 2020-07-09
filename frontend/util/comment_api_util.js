@@ -5,11 +5,11 @@ export const createComment = (comment) =>
     data: { comment },
   });
 
-export const updateComment = (commentData, commentId) => {
+export const updateComment = (comment, commentId) => {
   return $.ajax({
     method: "PATCH",
     url: `/api/comments/${commentId}`,
-    data: commentData,
+    data: { comment },
   });
 };
 

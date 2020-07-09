@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import CommentEditForm from "./comment_edit_form";
 
 const PhotoCommentItem = (props) => {
   const [edittable, setEdittable] = useState(false);
@@ -35,16 +36,20 @@ const PhotoCommentItem = (props) => {
           alt="profile-pic"
         />
       </div>
-      <div className="comment-data">
-        <Link
-          className="poster-name comment-poster"
-          to={`/users/${props.user.id}/photos`}
-        >
-          {props.user.username}
-        </Link>
-        <p className="comment-body">{props.body}</p>
-        {props.currUser.id === props.user.id ? commentControls : null}
-      </div>
+      {!edittable ? (
+        <div className="comment-data">
+          <Link
+            className="poster-name comment-poster"
+            to={`/users/${props.user.id}/photos`}
+          >
+            {props.user.username}
+          </Link>
+          <p className="comment-body">{props.body}</p>
+          {props.currUser.id === props.user.id ? commentControls : null}
+        </div>
+      ) : (
+        <CommentEditForm body={props.body} setEdittable={setEdittable} />
+      )}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { updateComment } from "../../actions/comment_actions";
 
 const CommentEditForm = (props) => {
-  const [body, setBody] = useState("");
+  const [body, setBody] = useState(props.body);
   const dispatch = useDispatch();
 
   const update = (e) => {
@@ -12,7 +12,15 @@ const CommentEditForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateComment({ body: body }));
+    dispatch(updateComment({ body: body }, props.photoId)).then(() =>
+      props.setEdittable(false)
+    );
+  };
+
+  const cancel = (e) => {
+    e.preventDefault();
+    setBody(props.body);
+    props.setEdittable(false);
   };
 
   return (
@@ -22,9 +30,14 @@ const CommentEditForm = (props) => {
         value={body}
         className="comment-edit-textarea"
       ></textarea>
-      <button onClick={handleSubmit} className="blue-button">
-        Submit
-      </button>
+      <div className="comment-btn-container">
+        <button onClick={handleSubmit} className="blue-button">
+          Submit
+        </button>
+        <button onClick={cancel} className="blue-button">
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };

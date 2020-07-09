@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { updateComment } from "../../actions/comment_actions";
 
 const CommentEditForm = (props) => {
   const [body, setBody] = useState("");
@@ -11,6 +12,7 @@ const CommentEditForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(updateComment({ body: body }));
   };
 
   return (

@@ -3,12 +3,16 @@ class Photo < ApplicationRecord
   validates :user_id, presence: true
 
   belongs_to :user
-  has_many :comments
+  
+  has_many :comments,
+    dependent :delete_all
+  
   has_many :commenters,
     through: :comments,
     source: :user
   
-  has_many :album_inclusions
+  has_many :album_inclusions,
+    dependent :delete_all
 
   has_many :photo_albums,
     through: :album_inclusions,

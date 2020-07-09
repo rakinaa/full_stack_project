@@ -14,7 +14,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find_by(id: params[:id])
     if @comment.user_id == current_user.id
       if @comment.update(comment_params) 
-        render "api/photos/show"
+        render :show
       else
         render json: @comment.errors.full_messages
       end

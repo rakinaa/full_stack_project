@@ -155,3 +155,4 @@ ShowcasePhoto.create(photo_id: photo4.id)
 ShowcasePhoto.create(photo_id: photo5.id)
 ShowcasePhoto.create(photo_id: photo15.id)
 ShowcasePhoto.create(photo_id: photo14.id)
+

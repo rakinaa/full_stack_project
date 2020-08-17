@@ -12,6 +12,29 @@ The photos index page features a flexible layout that dynamically resizes images
 
 ![show-png](app/assets/images/show_page.png)
 
+The dynamic resizing is acheived using flex-grow on the photo container. In order for the image inside to grow along with the container, a min width of 100% is needed.
+```css
+.photo-container {
+  flex-grow: 1;
+  position: relative;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: white;
+  transition: opacity 0.5s;
+  box-sizing: border-box;
+
+  &:hover .hud {
+    opacity: 100%;
+  }
+}
+
+.index-photo {
+  height: 150px;
+  min-width: 100%;
+  object-fit: cover;
+}
+```
+
 ### Posting Images
 Pictr allows you to upload multiple photos at a time, making it easy for users to add as many photos as they want without any hassle
 The images are stored on an AWS S3 bucket. 

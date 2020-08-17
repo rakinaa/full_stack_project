@@ -18,6 +18,7 @@ class AlbumIndex extends React.Component {
               <Link key={album.id} to={`/albums/${album.id}`} className="aindex-item">
                 <FontAwesomeIcon className="images-icon" icon={faImages} />
                 <img className="ahead-image" src={album.header_photo} alt=""/>
+                <p>{album.title}</p>
               </Link>
             ))}
           </div>

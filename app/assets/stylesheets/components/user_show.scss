@@ -84,6 +84,15 @@
   margin-left: 40px;
   position: relative;
   text-align: center;
+  
+  p {
+    width: 150px;
+    color: black;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 
 .images-icon {

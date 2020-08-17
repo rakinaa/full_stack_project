@@ -9,7 +9,7 @@ const NavBar = (props) => {
     <nav className="nav-main">
       <div className="constrainer">
         <div className="nav-left">
-          <Link className="nav-logo link-white" to="/">
+          <Link className="nav-logo link-white" to={props.currentUser ? "/photos" : "/"}>
             Pictr
           </Link>
           <Link className="nav-home link-white" to="/photos">

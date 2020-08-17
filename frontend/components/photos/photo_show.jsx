@@ -21,6 +21,7 @@ class PhotoShow extends React.Component {
 
   componentDidMount() {
     this.props.getPhoto(this.props.match.params.photoId);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps, prevState) {

@@ -4,6 +4,7 @@ import PhotoIndexItem from './photo_index_item';
 class PhotoIndex extends React.Component {
   componentDidMount() {
     this.props.getPhotos();
+    window.scrollTo(0, 0);
   }
   
   render() {

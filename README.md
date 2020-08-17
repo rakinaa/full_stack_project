@@ -41,6 +41,47 @@ The images are stored on an AWS S3 bucket.
 
 ![post-png](app/assets/images/photo_post.png)
 
+In order to facilitate multiple image uploads efficiently, all the image data is saved in state as an object containing all the photos' information and is then sent to the backend as an array of photos, allowing the photos to be saved in the database using one api call.
+
+```js
+handleFileUpload(e) {
+  const files = Array.from(e.currentTarget.files);
+
+  files.forEach((file, idx) => {
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({
+        [idx]: {
+          title: "",
+          description: "",
+          image: file,
+          imageUrl: fileReader.result,
+        },
+      });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  });
+}
+
+handleSubmit(e) {
+  e.preventDefault();
+  const formData = new FormData();
+  for (let photo of Object.values(this.state)) {
+    formData.append(`photos[][title]`, photo.title);
+    formData.append(`photos[][description]`, photo.description);
+    formData.append(`photos[][image]`, photo.image);
+    formData.append(`photos[][user_id]`, this.props.currentUser.id);
+  }
+  this.props
+    .processForm(formData)
+    .then(
+      this.props.history.push(`/users/${this.props.currentUser.id}/photos`)
+    );
+}
+```
+
 ### Albums
 
 Users can create albums of photos that they own. They are able to interface with a ui that allows them to click on a photo to toggle its presence in the album, they included photos display a checkmark when clicked.

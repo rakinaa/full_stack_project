@@ -92,3 +92,9 @@
 .comment-delete {
   color: grey;
 }
+
+@media (max-width: 1050px) {
+  .comment-form {
+    width: 250px;
+  }
+}

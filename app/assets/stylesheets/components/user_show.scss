@@ -3,7 +3,7 @@
   min-height: 200px;
   width: 100%;
   position: relative;
-  background-image: url('https://pictr-seeds.s3-us-west-1.amazonaws.com/seed_images/pexels-photo-3789871.jpeg');
+  background-image: url("https://pictr-seeds.s3-us-west-1.amazonaws.com/seed_images/pexels-photo-3789871.jpeg");
   background-position: center;
   background-size: cover;
 }
@@ -46,7 +46,6 @@
   display: flex;
 }
 
-
 .sub-data {
   display: flex;
   margin-top: 20px;
@@ -84,7 +83,7 @@
   margin-left: 40px;
   position: relative;
   text-align: center;
-  
+
   p {
     width: 150px;
     color: black;
@@ -145,18 +144,19 @@
   align-items: center;
 }
 
-.albums-link, .photos-link {
+.albums-link,
+.photos-link {
   color: lighten(black, 10%);
   font-size: 20px;
   text-decoration: none;
   margin-right: 30px;
   padding-top: 12px;
   padding-bottom: 12px;
-  transition: border-color .5s;
+  transition: border-color 0.5s;
 }
 
-
-.albums-link:hover, .photos-link:hover {
+.albums-link:hover,
+.photos-link:hover {
   border-bottom: 3px solid $soft-blue;
   color: black;
   margin-bottom: -3px;
@@ -172,4 +172,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+}
+
+@media (max-width: 1050px) {
+  .photos-link {
+    margin-left: 20px;
+  }
 }

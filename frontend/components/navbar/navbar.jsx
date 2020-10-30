@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import GreetingContainer from "./greeting/greeting_container";
-import SearhBar from "./searchbar";
+// import SearhBar from "./searchbar";
 import DevLinks from "./dev_links";
 
 const NavBar = (props) => {
@@ -9,7 +9,10 @@ const NavBar = (props) => {
     <nav className="nav-main">
       <div className="constrainer">
         <div className="nav-left">
-          <Link className="nav-logo link-white" to={props.currentUser ? "/photos" : "/"}>
+          <Link
+            className="nav-logo link-white"
+            to={props.currentUser ? "/photos" : "/"}
+          >
             Pictr
           </Link>
           <Link className="nav-home link-white" to="/photos">

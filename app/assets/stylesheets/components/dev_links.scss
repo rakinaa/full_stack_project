@@ -39,3 +39,29 @@
     color: $soft-blue;
   }
 }
+
+@media (max-width: 600px) {
+  .dev-links {
+    margin-right: 15px;
+
+    &:hover .second-link {
+      left: -22px;
+    }
+
+    &:hover .third-link {
+      left: -44px;
+    }
+  }
+
+  .dev-link {
+    font-size: 20px;
+  }
+
+  .third-link {
+    width: 20px;
+  }
+
+  .second-link {
+    width: 20px;
+  }
+}

@@ -52,7 +52,7 @@
   border-radius: 3px;
   border: none;
   padding: 0.5rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding-left: 3rem;
   background-color: $gray;
   transition: all 0.3s;
@@ -75,4 +75,16 @@
   text-decoration: none;
   color: white;
   @include darken-hover-text(white);
+}
+
+@media (max-width: 600px) {
+  .nav-home {
+    margin-left: 15px;
+    font-size: 16px;
+  }
+
+  .cloud-icon {
+    font-size: 20px;
+    margin-right: 12px;
+  }
 }
